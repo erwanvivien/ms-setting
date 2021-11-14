@@ -17,6 +17,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Segoe UI";
 }
 
 :root {
@@ -42,6 +43,30 @@
   align-items: center;
 }
 
+.search-bar {
+  width: 350px;
+  height: 30px;
+  padding: 10px;
+  border-style: solid;
+  border-color: var(--search-bar-box-color);
+  font-size: 1em;
+}
+
+.search-bar:hover {
+  border-color: var(--search-bar-highlighted-box-color);
+}
+
+.search-bar:focus {
+  border-color: var(--icon-color);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 .header-title {
   font-size: 2.5em;
   font-family: "Segoe UI Bold";
@@ -49,17 +74,45 @@
 }
 
 .main {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
   background-color: var(--main-bg);
+  flex-direction: column;
+}
+
+.category-list {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1330px;
+  /* justify-content: center; */
 }
 
 .category {
+  padding: 10px;
+  height: 90px;
+  width: 250px;
+  border: solid;
+  border-color: var(--category-border-min-highlight-color);
+  border-width: 2px;
+}
+
+.category:hover {
+  border-style: solid;
+  border-color: var(--category-border-max-highlight-color);
 }
 
 .category-icon {
 }
 
 .category-title {
+  color: var(--category-title-color);
 }
 
 .category-description {
+  font-size: 0.7em;
+  color: var(--category-description-color);
 }
