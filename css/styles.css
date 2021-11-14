@@ -40,12 +40,53 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  gap: 16px;
+}
+
+.header-container {
+  flex: 1;
+  height: 100%;
+  gap: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-title {
   font-size: 2.5em;
   font-family: "Segoe UI Bold";
   font-weight: 100;
+  color: var(--category-title-color);
+}
+
+.header-description {
+  font-size: 1.2em;
+  font-family: "Segoe UI";
+
+  color: var(--category-description-color);
+}
+
+.header-description-link {
+  font-size: 1.2em;
+  font-family: "Segoe UI";
+
+  color: var(--icon-color);
+}
+
+.header-account-img {
+  height: 80%;
+  border-radius: 50%;
+}
+
+.header-clickable-img {
+  height: 50%;
+  cursor: pointer;
+}
+
+.header-clickable-img:active {
+  transform: scale(0.9);
 }
 
 .main {
