@@ -51,7 +51,6 @@
 .header-clickable-description {
   color: var(--category-description-color);
   font-size: 1.2em;
-  cursor: pointer;
 }
 .header-clickable-description-link {
   color: var(--icon-color);

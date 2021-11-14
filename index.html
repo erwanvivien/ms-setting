@@ -26,8 +26,6 @@
 </head>
 
 <body class="body">
-  <script src="js/scripts.js"></script>
-
   <header class="header">
     <div class="header-account">
       <img class="header-account-img" src="https://thispersondoesnotexist.com/image" />
@@ -41,12 +39,7 @@
     <div class="header-clickable">
       <!-- DIV is needed for CSS -->
       <div>
-        <img class="header-clickable-img" src="assets/copy.svg" />
-        <p class="header-clickable-description">Copy</p>
-        <a class="header-clickable-description-link" href="ms-settings:">Test content</a>
-      </div>
-      <div>
-        <img class="header-clickable-img" src="assets/copy.svg" />
+        <img id='copy' class="header-clickable-img" src="assets/copy.svg" />
         <p class="header-clickable-description">Copy</p>
         <a class="header-clickable-description-link" href="ms-settings:">Test content</a>
       </div>
@@ -147,6 +140,8 @@
         </div>
       </div>
     </div>
+
+    <script src="js/scripts.js"></script>
   </main>
 </body>
 
