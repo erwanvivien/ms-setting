@@ -95,6 +95,22 @@ button:focus {
   border: solid;
   border-color: transparent;
   border-width: 1px;
+
+  display: flex;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 2px;
+}
+
+.category-image {
+  width: 40px;
+  height: 40px;
+  filter: invert(31%) sepia(68%) saturate(1827%) hue-rotate(186deg)
+    brightness(96%) contrast(102%);
 }
 
 .category:hover {
