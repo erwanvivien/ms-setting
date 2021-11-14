@@ -14,6 +14,7 @@
 }
 
 * {
+  font-family: "Segoe UI";
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -30,26 +31,25 @@
   --category-border-min-highlight-color: #e6e6e6;
   --category-border-max-highlight-color: #aaaaaa;
   --category-description-color: #5c5c5c;
+  --placeholder-color: #666666;
+  --placeholder-highlight-color: #999999;
 }
 
 .body {
 }
 
-.header {
-  background-color: var(--header-bg);
-  height: 185px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .search-bar {
-  width: 350px;
-  height: 30px;
-  padding: 10px;
+  margin-top: 32px;
+  width: 337px;
+  height: 32px;
+  padding: 9px 10px 11px 10px;
   border-style: solid;
   border-color: var(--search-bar-box-color);
   font-size: 1em;
+}
+
+.search-bar::placeholder {
+  color: var(--placeholder-color);
 }
 
 .search-bar:hover {
@@ -60,6 +60,10 @@
   border-color: var(--icon-color);
 }
 
+.search-bar:focus::placeholder {
+  color: var(--placeholder-highlight-color);
+}
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -67,14 +71,7 @@ button:focus {
   outline: none;
 }
 
-.header-title {
-  font-size: 2.5em;
-  font-family: "Segoe UI Bold";
-  font-weight: 100;
-}
-
 .main {
-  margin-top: 30px;
   display: flex;
   align-items: center;
   background-color: var(--main-bg);
@@ -96,8 +93,8 @@ button:focus {
   height: 90px;
   width: 250px;
   border: solid;
-  border-color: var(--category-border-min-highlight-color);
-  border-width: 2px;
+  border-color: transparent;
+  border-width: 1px;
 }
 
 .category:hover {

@@ -1,0 +1,80 @@
+.header {
+  background-color: var(--header-bg);
+  height: 185px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+}
+
+.header-account {
+  /* If header-account is modified, header-clickable should probably too */
+  flex: 1;
+  height: 100%;
+  gap: 16px;
+  margin-top: 35px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-account-img {
+  height: 60%;
+  border-radius: 50%;
+}
+
+.header-clickable {
+  /* If header-clickable is modified, header-account should probably too */
+  flex: 1;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-clickable > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-clickable-img {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.header-clickable-description {
+  color: var(--category-description-color);
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.header-clickable-description-link {
+  color: var(--icon-color);
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.header-clickable-img:active {
+  transform: scale(0.9);
+}
+
+.header-title {
+  font-size: 30px;
+  font-family: "Segoe UI Bold";
+  font-weight: 100;
+  color: var(--category-title-color);
+}
+
+.header-description {
+  font-size: 1.2em;
+  color: var(--category-description-color);
+}
+
+.header-description-link {
+  font-size: 1.2em;
+  color: var(--icon-color);
+}

@@ -20,6 +20,7 @@
   <!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
   <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
 
+  <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -27,7 +28,28 @@
   <script src="js/scripts.js"></script>
 
   <header class="header">
-    <h1 class="header-title">MS Settings</h1>
+    <div class="header-account">
+      <img class="header-account-img" src="https://thispersondoesnotexist.com/image" />
+      <div>
+        <h1 class="header-title">Vahan Boghossian</h1>
+        <p class="header-description">contact@ms-setting.com</p>
+        <p class="header-description-link">My Microsoft account</p>
+      </div>
+    </div>
+
+    <div class="header-clickable">
+      <!-- DIV is needed for CSS -->
+      <div>
+        <img class="header-clickable-img" src="assets/copy.svg" />
+        <p class="header-clickable-description">Copy</p>
+        <p class="header-clickable-description-link">Copy content</p>
+      </div>
+      <div>
+        <img class="header-clickable-img" src="assets/copy.svg" />
+        <p class="header-clickable-description">Copy</p>
+        <p class="header-clickable-description-link">Copy content</p>
+      </div>
+    </div>
   </header>
   <main class="main">
     <input class="search-bar" type="search" placeholder="Find a setting">
