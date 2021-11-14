@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 16px;
 
   gap: 16px;
 }
@@ -21,7 +22,7 @@
 }
 
 .header-account-img {
-  height: 60%;
+  height: 115px;
   border-radius: 50%;
 }
 
@@ -63,18 +64,19 @@
 }
 
 .header-title {
-  font-size: 30px;
+  font-size: 28px;
   font-family: "Segoe UI Bold";
   font-weight: 100;
   color: var(--category-title-color);
 }
 
 .header-description {
-  font-size: 1.2em;
+  font-size: 15px;
   color: var(--category-description-color);
 }
 
 .header-description-link {
-  font-size: 1.2em;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--icon-color);
 }
