@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../fonts/segoeui.ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI Bold";
+  src: url("../fonts/segoeuib.ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI Italic";
+  src: url("../fonts/segoeuii.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --header-bg: #f2f2f2;
+  --main-bg: #ffffff;
+  --icon-color: #0078d7;
+  --search-bar-box-color: #999999;
+  --search-bar-highlighted-box-color: #666666;
+  --category-title-color: #000000;
+  --category-border-min-highlight-color: #e6e6e6;
+  --category-border-max-highlight-color: #aaaaaa;
+  --category-description-color: #5c5c5c;
+}
+
+.body {
+}
+
+.header {
+  background-color: var(--header-bg);
+  height: 185px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 2.5em;
+  font-family: "Segoe UI Bold";
+  font-weight: 100;
+}
+
+.main {
+  background-color: var(--main-bg);
+}
+
+.category {
+}
+
+.category-icon {
+}
+
+.category-title {
+}
+
+.category-description {
+}
