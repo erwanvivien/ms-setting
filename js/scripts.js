@@ -1,5 +1,14 @@
+const copyConfirmation = document.getElementById('copy-confirmation');
+let timeoutCopy = null;
+
 document.getElementById('copy').onclick = function (e) {
-    navigator.clipboard.writeText("ms-settings:")
+    navigator.clipboard.writeText("ms-settings:");
+
+    copyConfirmation.style.display = 'block';
+    clearTimeout(timeoutCopy);
+    timeoutCopy = setTimeout(() => {
+        copyConfirmation.style.display = 'none';
+    }, 1000);
 }
 
 document.querySelectorAll('.category').forEach((category) => {

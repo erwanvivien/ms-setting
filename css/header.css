@@ -48,6 +48,13 @@
   cursor: pointer;
 }
 
+.header-clickable-confirmation {
+  display: none;
+  position: fixed;
+  top: 25px;
+  pointer-events: none;
+}
+
 .header-clickable-description {
   color: var(--category-description-color);
   font-size: 1.2em;
