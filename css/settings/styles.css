@@ -8,9 +8,13 @@
   flex: 1;
 
   display: flex;
-  justify-content: center;
+  padding-top: 72px;
   align-items: flex-start;
 
   padding-left: 30px;
   gap: 40px;
+}
+
+.main > * {
+  max-width: 575px;
 }
