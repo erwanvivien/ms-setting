@@ -155,6 +155,8 @@ input[type="checkbox"].checkbox-input:after {
 .checkbox-description {
   font-size: 0.9em;
   color: var(--category-description-color);
+
+  margin-top: 5px;
 }
 
 /* ---------------------------------------- */
