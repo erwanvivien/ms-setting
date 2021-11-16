@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{settingTitle} — Provide accurate help</title>
+  <meta name="description"
+    content="MS Settings Mimic — Allows you to create a link to a Microsoft/Windows Setting for {settingTitle} category — Provide better help">
+  <meta name="author" content="Erwan, Vahan">
+
+  <meta property="og:title" content="{settingTitle} — Provide accurate help">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ms-setting.com/">
+  <meta property="og:description"
+    content="MS Settings Mimic — Allows you to create a link to a Microsoft/Windows Setting for {settingTitle} category — Provide better help">
+  <meta property="og:image" content="/assets/icons/settings.bmp">
+
+  <link rel="icon" href="../assets/icons/settings.bmp">
+  <link rel="icon" href="../assets/icons/settings.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/icons/settings.bmp">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/settings/styles.css">
+  <link rel="stylesheet" href="../css/settings/header.css">
+  <link rel="stylesheet" href="../css/settings/options.css">
+  <link rel="stylesheet" href="../css/settings/footer.css">
+</head>
+
+<body class="body">
+  <header class="header">
+    <p class="header-back">Settings</p>
+    <div class="header-home">
+      <img
+        src="https://www.freeiconspng.com/thumbs/house-png/home-house-silhouette-icon-building--public-domain-pictures--20.png" />
+      <p>Home</p>
+    </div>
+
+    <div class="header-search-container">
+      <input class="header-search" />
+    </div>
+
+    <h3 class="header-title">{settingTitle}</h3>
+
+    <div class="header-list">
+      <div class="header-list-item">
+        <img class="header-list-item-image" src="../assets/icons/peripherals.svg" />
+        <p class="header-list-item-text">Peripherals</p>
+      </div>
+      <div class="header-list-item">
+        <img class="header-list-item-image" src="../assets/icons/phone.svg" />
+        <p class="header-list-item-text">Phone</p>
+      </div>
+      <div class="header-list-item">
+        <img class="header-list-item-image" src="../assets/icons/privacy.svg" />
+        <p class="header-list-item-text">Privacy</p>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+
+    <label class="switch">
+      <input type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
+
+    <script src="../js/settings/scripts.js"></script>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-title">Turn on Bluetooth even faster</p>
+      <p class="footer-description">To turn on Bluetooth without opening Settings, open action center, and then select
+        Bluetooth icon. Do the same to
+        turn it off when you want.</p>
+      <p class="footer-link">Get more info about Bluetooth</p>
+    </div>
+    <div class="footer-container">
+      <p class="footer-title">Related settings</p>
+      <p class="footer-link">Devices and printers</p>
+      <p class="footer-link">Sound settings</p>
+      <p class="footer-link">Display settings</p>
+      <p class="footer-link">More Bluetooth options</p>
+      <p class="footer-link">Send or receive files via Bluetooth</p>
+    </div>
+
+    <div class="footer-container">
+      <p class="footer-title">Have a question ?</p>
+      <p class="footer-link">Share files over Bluetooth</p>
+      <p class="footer-link">Reinstall Bluetooth drivers</p>
+      <p class="footer-link">Fix Bluetooth connections</p>
+      <p class="footer-link">Get help</p>
+    </div>
+
+  </footer>
+</body>
+
+</html>
