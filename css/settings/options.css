@@ -109,6 +109,8 @@ input[type="checkbox"].checkbox-input {
   -o-appearance: none;
   outline: none;
   content: none;
+
+  position: fixed;
 }
 
 input[type="checkbox"].checkbox-input:before {
@@ -147,7 +149,7 @@ input[type="checkbox"].checkbox-input:after {
 
 .checkbox-input + label {
   position: relative;
-  top: -8px;
+  left: 30px;
 }
 
 .checkbox-description {
