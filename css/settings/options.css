@@ -110,7 +110,7 @@ input[type="checkbox"].checkbox-input {
   outline: none;
   content: none;
 
-  position: absolute;
+  position: sticky;
 
   --checkbox-color-active: #0078d7;
   --checkbox-color-off: white;
@@ -124,6 +124,11 @@ input[type="checkbox"].checkbox-input:before:hover {
 
 input[type="checkbox"].checkbox-input:checked:before:hover {
   --checkbox-color-border: #000000;
+}
+
+.checkbox-input-container {
+  display: flex;
+  gap: 8px;
 }
 
 input[type="checkbox"].checkbox-input:active:hover {
