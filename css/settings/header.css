@@ -2,6 +2,7 @@
   height: 100vh;
   width: 320px;
   background-color: #e6e6e6;
+  position: fixed;
 
   overflow-y: auto;
 }
