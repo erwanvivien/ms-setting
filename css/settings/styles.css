@@ -13,6 +13,7 @@
 
   padding-left: 350px;
   gap: 60px;
+  overflow-x: hidden;
 }
 
 .main > * {
