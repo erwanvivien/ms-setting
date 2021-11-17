@@ -202,6 +202,10 @@ input[type="checkbox"].checkbox-input:after {
   background-color: #f2f2f2;
 }
 
+.adding-container:active {
+  transform: scale(0.98);
+}
+
 .adding-image {
 }
 
