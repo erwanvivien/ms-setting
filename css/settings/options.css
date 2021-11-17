@@ -110,7 +110,31 @@ input[type="checkbox"].checkbox-input {
   outline: none;
   content: none;
 
-  position: fixed;
+  position: absolute;
+
+  --checkbox-color-active: #0078d7;
+  --checkbox-color-off: white;
+  --checkbox-color-tick: white;
+  --checkbox-color-border: #333333;
+}
+
+input[type="checkbox"].checkbox-input:before:hover {
+  --checkbox-color-border: #000000;
+}
+
+input[type="checkbox"].checkbox-input:checked:before:hover {
+  --checkbox-color-border: #000000;
+}
+
+input[type="checkbox"].checkbox-input:active:hover {
+  --checkbox-color-active: #666666;
+  --checkbox-color-off: #666666;
+  --checkbox-color-tick: #666666;
+  --checkbox-color-border: #666666;
+}
+
+input[type="checkbox"].checkbox-input:checked:active:hover {
+  --checkbox-color-tick: white;
 }
 
 input[type="checkbox"].checkbox-input:before {
@@ -121,20 +145,20 @@ input[type="checkbox"].checkbox-input:before {
   display: block;
   width: 21px;
   height: 21px;
-  border: 2px solid #333333;
-  background-color: white;
+  border: 2px solid var(--checkbox-color-border);
+  background-color: var(--checkbox-color-off);
 }
 
 input[type="checkbox"].checkbox-input:checked:before {
   color: black !important;
-  border: 2px solid #0078d7;
-  background-color: #0078d7;
+  border: 2px solid var(--checkbox-color-active);
+  background-color: var(--checkbox-color-active);
 }
 
 input[type="checkbox"].checkbox-input:after {
   content: "";
 
-  position: fixed;
+  position: absolute;
   margin-top: -24px;
   margin-left: 8px;
   width: 8px;
@@ -144,7 +168,7 @@ input[type="checkbox"].checkbox-input:after {
   border-bottom: solid;
   border-right: solid;
 
-  border-color: white;
+  border-color: var(--checkbox-color-tick);
 }
 
 .checkbox-input + label {
