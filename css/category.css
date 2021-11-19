@@ -1,11 +1,14 @@
 .category-list {
   margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+
+  max-width: min(1330px, 80vw);
+
+  display: grid; /* 1 */
+  grid-template-columns: repeat(auto-fill, 250px); /* 2 */
+  grid-gap: 1rem; /* 3 */
+  justify-content: space-between; /* 4 */
+
   gap: 20px;
-  max-width: 1330px;
-  /* justify-content: center; */
 }
 
 .category {
