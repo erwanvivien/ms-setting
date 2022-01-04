@@ -4,8 +4,8 @@ import Head from "next/head";
 import styles from "../styles/Settings.module.css";
 
 import SettingPanel from "../components/SettingPanel";
-import SettingContent from "../components/SettingContent";
 import SettingMore from "../components/SettingMore";
+import SettingBuilder from "../components/SettingBuilder";
 
 const Template: NextPage = () => {
   return (
@@ -20,7 +20,7 @@ const Template: NextPage = () => {
           <SettingPanel />
         </header>
         <main className={styles.main}>
-          <SettingContent />
+          <SettingBuilder title="Bluetooth and devices" />
         </main>
         <footer className={styles.footer}>
           <SettingMore />
