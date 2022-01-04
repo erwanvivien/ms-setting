@@ -10,15 +10,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     const query = router.query;
 
     if (!query || Object.keys(query).length === 0) return;
-
-    router.push(
-      { pathname: "#" },
-      {},
-      {
-        shallow: true,
-      }
-    );
-
     if (typeof query["setting"] !== "string") return;
 
     const setting = decodeURI(query["setting"]);
