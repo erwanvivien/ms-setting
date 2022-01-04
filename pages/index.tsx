@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-import SettingList from "../components/SettingList";
+import SettingList from "../components/Selection";
 import React from "react";
 import Header from "../components/Header";
 
