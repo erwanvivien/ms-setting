@@ -74,7 +74,7 @@
 
 .header_home_link {
   color: black;
-  cursor: none;
+  cursor: pointer;
   text-decoration: none;
 }
 
