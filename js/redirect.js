@@ -224,6 +224,7 @@ const checkHash = (hash) => {
 
   try {
     window.open(hashValue, '_blank').focus();
+    window.location = window.location.href.slice(0, hashIndex);
   } catch (error) {
     window.location = hashValue;
   }
