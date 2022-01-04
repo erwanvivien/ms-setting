@@ -21,3 +21,4 @@ const Adding = ({ alt, icon, desc }: AddingProps) => (
   </div>
 );
 export default Adding;
+export type { AddingProps };

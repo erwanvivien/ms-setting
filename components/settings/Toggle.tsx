@@ -17,3 +17,4 @@ const Toggle = ({ defaultChecked, title }: ToggleProps) => (
 );
 
 export default Toggle;
+export type { ToggleProps };
