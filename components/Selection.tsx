@@ -15,6 +15,7 @@ import AccessibilityIcon from "../public/icons/ico_accessibility.svg";
 import SearchIcon from "../public/icons/ico_search.svg";
 import PrivacyIcon from "../public/icons/ico_privacy.svg";
 import UpdateIcon from "../public/icons/ico_update.svg";
+import Link from "next/link";
 
 const categories = [
   {
@@ -84,6 +85,15 @@ const categories = [
   },
 ];
 
+const sanitize = (title: string) => {
+  const idx = title.indexOf(" ");
+  if (idx !== -1) {
+    return "/" + title.substring(0, idx).toLowerCase();
+  } else {
+    return "/" + title.toLowerCase();
+  }
+};
+
 const SettingList: NextPage = () => (
   <>
     <input
@@ -93,25 +103,23 @@ const SettingList: NextPage = () => (
     />
     <div className={styles.category_list}>
       {categories.map((category) => (
-        <div
-          className={styles.category}
-          key={category.title}
-          onClick={() => console.log(category.title)}
-        >
-          <Image
-            className={styles.category_image}
-            src={category.icon}
-            alt={category.description}
-            width={40}
-            height={40}
-          />
-          <div className={styles.category_container}>
-            <div className={styles.category_title}>{category.title}</div>
-            <div className={styles.category_description}>
-              {category.description}
+        <Link href={sanitize(category.title)} key={category.title}>
+          <a className={styles.category}>
+            <Image
+              className={styles.category_image}
+              src={category.icon}
+              alt={category.description}
+              width={40}
+              height={40}
+            />
+            <div className={styles.category_container}>
+              <div className={styles.category_title}>{category.title}</div>
+              <div className={styles.category_description}>
+                {category.description}
+              </div>
             </div>
-          </div>
-        </div>
+          </a>
+        </Link>
       ))}
     </div>
   </>
