@@ -73,8 +73,10 @@ const SettingPanel: NextPage = () => {
               }}
               onClick={() =>
                 router.push({
-                  pathname: "/",
-                  query: { setting: encodeURI(setting.setting) },
+                  query: {
+                    setting: encodeURI(setting.setting),
+                    settings: router.query.settings,
+                  },
                 })
               }
             >
