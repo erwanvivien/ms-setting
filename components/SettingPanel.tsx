@@ -2,6 +2,7 @@ import React from "react";
 import type { NextPage } from "next";
 import styles from "../styles/Settings.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 import devicesIcon from "../public/icons/categories/periph_devices.svg";
 import printersIcon from "../public/icons/categories/periph_printers.svg";
@@ -19,18 +20,17 @@ const settings = [
 const SettingPanel: NextPage = () => (
   <>
     <p className={styles.header_back}>Settings</p>
-    <a
-      className={[styles.header_home, styles.header_home_link].join(" ")}
-      href="../index.html"
-    >
-      <Image
-        src="/icons/categories/home.png"
-        alt="Home icon"
-        width={40}
-        height={40}
-      />
-      <p>Home</p>
-    </a>
+    <Link href="/">
+      <a className={[styles.header_home, styles.header_home_link].join(" ")}>
+        <Image
+          src="/icons/categories/home.png"
+          alt="Home icon"
+          width={40}
+          height={40}
+        />
+        <p>Home</p>
+      </a>
+    </Link>
 
     <div className={styles.header_search_container}>
       <input className={styles.header_search} />
