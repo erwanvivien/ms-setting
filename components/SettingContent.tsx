@@ -19,13 +19,17 @@ const SettingContent: NextPage = () => (
     <div className={styles.toggle_container}>
       <p className={styles.toogle_title}>Toggle 2</p>
       <label className={styles.toogle_input}>
-        <input type="checkbox" checked />
+        <input type="checkbox" defaultChecked />
         <span className={[styles.slider, styles.round].join(" ")}></span>
       </label>
     </div>
     <div className={styles.checkbox_container}>
       <div className={styles.checkbox_input_container}>
-        <input type="checkbox" className={styles.checkbox_input} checked />
+        <input
+          type="checkbox"
+          className={styles.checkbox_input}
+          defaultChecked
+        />
         <p className={styles.checkbox_label}>Option 1</p>
       </div>
       <p className={styles.checkbox_description}>
