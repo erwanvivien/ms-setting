@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 import CopyIcon from "../public/copy.svg";
+import Link from "next/link";
 
 const Header: NextPage = () => {
   const [copiedVisibility, setCopiedVisibility] = React.useState(false);
@@ -51,12 +52,12 @@ const Header: NextPage = () => {
             height={40}
             onClick={showCopied}
           />
-          <a
-            className={styles.header_clickable_description_link}
-            href="ms-settings:"
-          >
-            Test content
-          </a>
+
+          <Link href="/?setting=ms-settings:">
+            <a className={styles.header_clickable_description_link}>
+              Test content
+            </a>
+          </Link>
         </div>
       </div>
     </>
