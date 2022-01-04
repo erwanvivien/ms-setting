@@ -45,7 +45,7 @@ const Header: NextPage = () => {
           )}
           <Image
             id="copy"
-            className={styles.header_clickable_Image}
+            className={styles.header_clickable_img}
             src={CopyIcon}
             alt="Copy icon"
             width={40}
