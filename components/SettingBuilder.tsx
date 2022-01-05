@@ -1,12 +1,15 @@
 import React from "react";
 
+import Image from "next/image";
+import { NextRouter } from "next/router";
+
 import SettingMatch, { SettingBuilder, SettingTypes } from "./settings_types";
 
 import AppIcon from "../public/icons/categories/app_default.svg";
-import Image from "next/image";
 import CopyIcon from "../public/copy.svg";
 
 import styles from "../styles/Home.module.css";
+import { PossibleSettings, titleMap } from "./SettingPanel";
 
 const builder: SettingBuilder = [
   {
@@ -42,30 +45,43 @@ const builder: SettingBuilder = [
   },
 ];
 
-type SettingBuilderProps = {
-  title: string;
+const SettingBuilder = ({ router }: { router: NextRouter }) => {
+  const [title, setTitle] = React.useState("");
+
+  React.useEffect(() => {
+    if (
+      router.query &&
+      typeof router.query.settings === "string" &&
+      router.query.settings in titleMap
+    ) {
+      const setting = router.query.settings as PossibleSettings;
+      setTitle(titleMap[setting]);
+    }
+  }, [router, router.query]);
+
+  return (
+    <>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <h1>{title}</h1>
+
+        <Image
+          id="copy"
+          className={styles.header_clickable_img}
+          src={CopyIcon}
+          alt="Copy icon"
+          width={40}
+          height={40}
+        />
+      </div>
+
+      <h3>This could be any random settings</h3>
+
+      {builder.map((block, index) => {
+        const Block = SettingMatch[block.type];
+        return <Block key={index} {...block} />;
+      })}
+    </>
+  );
 };
-
-const SettingBuilder = ({ title }: SettingBuilderProps) => (
-  <>
-    <div style={{ display: "flex", flexDirection: "row" }}>
-      <h1>{title}</h1>
-
-      <Image
-        id="copy"
-        className={styles.header_clickable_img}
-        src={CopyIcon}
-        alt="Copy icon"
-        width={40}
-        height={40}
-      />
-    </div>
-
-    {builder.map((block, index) => {
-      const Block = SettingMatch[block.type];
-      return <Block key={index} {...block} />;
-    })}
-  </>
-);
 
 export default SettingBuilder;
