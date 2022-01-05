@@ -9,7 +9,7 @@ import AppIcon from "../public/icons/categories/app_default.svg";
 import CopyIcon from "../public/copy.svg";
 
 import styles from "../styles/Home.module.css";
-import { PossibleSettings, titleMap } from "./SettingPanel";
+import { PossibleSettings, titleMap } from "../pages/[settings]";
 
 const builder: SettingBuilder = [
   {
@@ -45,7 +45,9 @@ const builder: SettingBuilder = [
   },
 ];
 
-const SettingBuilder = ({ router }: { router: NextRouter }) => {
+type SettingBuilderProps = { router: NextRouter; title: string };
+
+const SettingBuilder = ({ router }: SettingBuilderProps) => {
   const [title, setTitle] = React.useState("");
 
   React.useEffect(() => {
