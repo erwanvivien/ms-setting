@@ -1,5 +1,5 @@
 import React from "react";
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Settings.module.css";
 
@@ -722,24 +722,14 @@ export type PossibleSettings =
   | "system"
   | "update";
 
-const Template: NextPage = () => {
-  const router = useRouter();
-
+const Template = ({ page }: { page: PossibleSettings }) => {
   const [icons, setIcons] = React.useState<Setting[]>([]);
   const [title, setTitle] = React.useState("");
 
   React.useEffect(() => {
-    if (
-      router.query &&
-      typeof router.query.settings === "string" &&
-      router.query.settings in settingsPanel
-    ) {
-      const setting = router.query.settings as PossibleSettings;
-      const icons = settingsPanel[setting];
-      setIcons(icons);
-      setTitle(titleMap[setting]);
-    }
-  }, [router, router.query]);
+    setIcons(settingsPanel[page]);
+    setTitle(titleMap[page]);
+  }, [page]);
 
   return (
     <>
@@ -750,10 +740,10 @@ const Template: NextPage = () => {
 
       <div style={{ display: "flex", flexDirection: "row" }}>
         <header className={styles.header}>
-          <SettingPanel router={router} icons={icons} title={title} />
+          <SettingPanel page={page} icons={icons} title={title} />
         </header>
         <main className={styles.main}>
-          <SettingBuilder router={router} title={title} />
+          <SettingBuilder title={title} />
         </main>
         <footer className={styles.footer}>
           <SettingMore />
@@ -761,6 +751,38 @@ const Template: NextPage = () => {
       </div>
     </>
   );
+};
+
+// This function gets called at build time
+export async function getStaticPaths() {
+  // Get the paths we want to pre-render based on posts
+  const paths = [
+    { params: { settings: "accounts" } },
+    { params: { settings: "ease" } },
+    { params: { settings: "apps" } },
+    { params: { settings: "personalization" } },
+    { params: { settings: "gaming" } },
+    { params: { settings: "time" } },
+    { params: { settings: "network" } },
+    { params: { settings: "devices" } },
+    { params: { settings: "phone" } },
+    { params: { settings: "privacy" } },
+    { params: { settings: "search" } },
+    { params: { settings: "system" } },
+    { params: { settings: "update" } },
+  ];
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false };
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  return {
+    props: {
+      page: context.params?.settings,
+    },
+  };
 };
 
 export default Template;

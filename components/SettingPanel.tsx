@@ -4,7 +4,6 @@ import styles from "../styles/Settings.module.css";
 import homeStyles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { NextRouter } from "next/router";
 
 import CopyIcon from "../public/copy.svg";
 import { Setting } from "../pages/[settings]";
@@ -12,10 +11,10 @@ import { Setting } from "../pages/[settings]";
 type SettingPanelProps = {
   icons: Setting[];
   title: string;
-  router: NextRouter;
+  page: string;
 };
 
-const SettingPanel = ({ icons, title, router }: SettingPanelProps) => {
+const SettingPanel = ({ icons, title, page }: SettingPanelProps) => {
   return (
     <>
       <Link href="/">
@@ -62,7 +61,7 @@ const SettingPanel = ({ icons, title, router }: SettingPanelProps) => {
                   const basePath =
                     `${window.location.protocol}//` +
                     `${window.location.host}/` +
-                    `${router.query.settings}?` +
+                    `${page}?` +
                     `setting=${setting.setting}`;
 
                   console.log(basePath);
