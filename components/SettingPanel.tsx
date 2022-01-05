@@ -58,14 +58,17 @@ const SettingPanel = ({ icons, title, router }: SettingPanelProps) => {
                   position: "absolute",
                   right: 8,
                 }}
-                onClick={() =>
-                  router.push({
-                    query: {
-                      setting: encodeURI(setting.setting),
-                      settings: router.query.settings,
-                    },
-                  })
-                }
+                onClick={() => {
+                  window.location.protocol;
+                  const basePath =
+                    `${window.location.protocol}//` +
+                    `${window.location.host}/` +
+                    `${router.query.settings}?` +
+                    `setting=${setting.setting}`;
+
+                  console.log(basePath);
+                  navigator.clipboard.writeText(basePath);
+                }}
               >
                 <Image
                   className={homeStyles.header_clickable_img}
