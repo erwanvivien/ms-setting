@@ -59,7 +59,6 @@ const SettingPanel = ({ icons, title, router }: SettingPanelProps) => {
                   right: 8,
                 }}
                 onClick={() => {
-                  window.location.protocol;
                   const basePath =
                     `${window.location.protocol}//` +
                     `${window.location.host}/` +
