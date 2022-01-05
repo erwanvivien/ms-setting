@@ -1,5 +1,5 @@
 import React from "react";
-import type { GetStaticProps, NextPage } from "next";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Settings.module.css";
 
@@ -753,9 +753,7 @@ const Template = ({ page }: { page: PossibleSettings }) => {
   );
 };
 
-// This function gets called at build time
-export async function getStaticPaths() {
-  // Get the paths we want to pre-render based on posts
+export const getStaticPaths: GetStaticPaths = async (context) => {
   const paths = [
     { params: { settings: "accounts" } },
     { params: { settings: "ease" } },
@@ -775,7 +773,7 @@ export async function getStaticPaths() {
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
   return { paths, fallback: false };
-}
+};
 
 export const getStaticProps: GetStaticProps = async (context) => {
   return {
