@@ -20,9 +20,9 @@ class MyDocument extends Document {
 
           <meta
             name="description"
-            content="MS Settings Mimic
-    Allows you to create a link to a Microsoft/Windows Setting
-    Provide better help"
+            content={`MS Settings Mimic
+            Allows you to create a link to a Microsoft/Windows Setting
+            Provide better help`}
           />
           <meta name="author" content="Erwan, Vahan" />
 
@@ -34,9 +34,9 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://ms-setting.com/" />
           <meta
             property="og:description"
-            content="MS Settings Mimic
+            content={`MS Settings Mimic
     Allows you to create a link to a Microsoft/Windows Setting
-    Provide better help"
+    Provide better help`}
           />
           <meta property="og:image" content="/icons/settings.svg" />
 
