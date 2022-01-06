@@ -5,20 +5,10 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 import CopyIcon from "../public/copy.svg";
-import Link from "next/link";
 
 const Header: NextPage = () => {
-  const [copiedVisibility, setCopiedVisibility] = React.useState(false);
-  const [myTimeout, setMyTimeout] = React.useState<NodeJS.Timeout>(null as any);
-
-  const showCopied = () => {
-    clearTimeout(myTimeout);
-    const timeout = setTimeout(() => {
-      setCopiedVisibility(false);
-    }, 1000);
-
-    setCopiedVisibility(true);
-    setMyTimeout(timeout);
+  const copy = (text: string) => {
+    navigator.clipboard.writeText(text);
   };
 
   return (
@@ -40,9 +30,6 @@ const Header: NextPage = () => {
 
       <div className={styles.header_clickable}>
         <div>
-          {copiedVisibility && (
-            <div className={styles.header_clickable_confirmation}>Copied !</div>
-          )}
           <Image
             id="copy"
             className={styles.header_clickable_img}
@@ -50,14 +37,14 @@ const Header: NextPage = () => {
             alt="Copy icon"
             width={40}
             height={40}
-            onClick={showCopied}
+            onClick={() =>
+              copy(
+                `${window.location.protocol}//` +
+                  `${window.location.host}/?` +
+                  `setting=ms-settings:`
+              )
+            }
           />
-
-          <Link href="/?setting=ms-settings:">
-            <a className={styles.header_clickable_description_link}>
-              Test content
-            </a>
-          </Link>
         </div>
       </div>
     </>
