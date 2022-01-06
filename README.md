@@ -30,3 +30,8 @@ Like so:
 
 - [@erwanvivien](https://github.com/erwanvivien)
 - [@VGBS](https://github.com/VBGS)
+
+### Special thanks to
+
+[This person does not exist](https://thispersondoesnotexist.com/image), we are using it to generate a random face \
+for the displayed microsoft account
