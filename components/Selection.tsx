@@ -1,3 +1,5 @@
+import React from "react";
+
 import type { NextPage } from "next";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -16,6 +18,8 @@ import SearchIcon from "../public/icons/ico_search.svg";
 import PrivacyIcon from "../public/icons/ico_privacy.svg";
 import UpdateIcon from "../public/icons/ico_update.svg";
 import Link from "next/link";
+import { Setting, settingsPanel } from "../pages/[settings]";
+import CopyIcon from "../public/copy.svg";
 
 const categories = [
   {
@@ -94,35 +98,121 @@ const sanitize = (title: string) => {
   }
 };
 
-const SettingList: NextPage = () => (
-  <>
-    <input
-      className={styles.search_bar}
-      type="search"
-      placeholder="Find a setting"
-    />
-    <div className={styles.category_list}>
-      {categories.map((category) => (
-        <Link href={sanitize(category.title)} key={category.title}>
-          <a className={styles.category}>
-            <Image
-              className={styles.category_image}
-              src={category.icon}
-              alt={category.description}
-              width={40}
-              height={40}
-            />
-            <div className={styles.category_container}>
-              <div className={styles.category_title}>{category.title}</div>
-              <div className={styles.category_description}>
-                {category.description}
-              </div>
-            </div>
-          </a>
-        </Link>
-      ))}
-    </div>
-  </>
-);
+// const a = settingsPanel.;
 
-export default SettingList;
+const entries = Object.entries(settingsPanel);
+
+type SelectionProps = {
+  copy: (text: string) => void;
+};
+
+const Selection = ({ copy }: SelectionProps) => {
+  const [search, setSearch] = React.useState("");
+  const [results, setResults] = React.useState<(Setting & { count: number })[]>(
+    []
+  );
+
+  const update = (text: string) => {
+    setSearch(text);
+    if (!text) {
+      setResults([]);
+      return;
+    }
+
+    const res = entries.map(([k, v]) =>
+      v.map((item) => {
+        if (!item.icon) return { ...item, count: 0 };
+
+        let match = 0;
+        if (item.text.includes(text)) {
+          match += 5;
+        }
+
+        if (!item.keywords) return { ...item, count: match };
+
+        item.keywords.forEach((key) => {
+          if (key.includes(text)) {
+            match += 1;
+          }
+        });
+
+        return { ...item, count: match };
+      })
+    );
+
+    const found = res
+      .map((r) => r.filter((p) => p.count > 0))
+      .filter((empty) => empty.length !== 0)
+      .reduce((prev, next) => prev.concat(next), [])
+      .sort((a, b) => b.count - a.count);
+
+    setResults(found.slice(0, 5));
+  };
+
+  return (
+    <>
+      <input
+        className={styles.search_bar}
+        type="search"
+        placeholder="Find a setting"
+        value={search}
+        onChange={(event) => update(event.target.value)}
+      />
+      {results &&
+        results.length !== 0 &&
+        results.map((r) => (
+          <div
+            key={r.setting}
+            style={{
+              display: "flex",
+              width: 250,
+              gap: 8,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Image src={r.icon} alt={r.text} width={40} height={40} />
+            <p style={{ textAlign: "center", flex: 1 }}>{r.text}</p>
+            <Image
+              className={styles.header_clickable_img}
+              src={CopyIcon}
+              alt="Copy icon"
+              width={30}
+              height={30}
+              onClick={() =>
+                copy(
+                  `${window.location.protocol}//` +
+                    `${window.location.host}/?` +
+                    `redirect=${r.setting}`
+                )
+              }
+            />
+          </div>
+        ))}
+
+      <div className={styles.category_list}>
+        {categories.map((category) => (
+          <Link href={sanitize(category.title)} key={category.title}>
+            <a className={styles.category}>
+              <Image
+                className={styles.category_image}
+                src={category.icon}
+                alt={category.description}
+                width={40}
+                height={40}
+              />
+              <div className={styles.category_container}>
+                <div className={styles.category_title}>{category.title}</div>
+                <div className={styles.category_description}>
+                  {category.description}
+                </div>
+              </div>
+            </a>
+          </Link>
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default Selection;
