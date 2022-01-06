@@ -739,7 +739,7 @@ const Template = ({ page }: { page: PossibleSettings }) => {
       return;
     }
 
-    const setting = text.substring(text.indexOf("ms-settings:"));
+    const redirect = text.substring(text.indexOf("ms-settings:"));
 
     clearTimeout(myTimeout);
     navigator.clipboard.writeText(text);
@@ -748,7 +748,7 @@ const Template = ({ page }: { page: PossibleSettings }) => {
       setContent("");
     }, 1000);
 
-    setContent(setting);
+    setContent(redirect);
     setMyTimeout(t);
   };
 
@@ -776,6 +776,7 @@ const Template = ({ page }: { page: PossibleSettings }) => {
           {icons && icons.length !== 0 && (
             <SettingBuilder
               title={title}
+              page={page}
               setting={icons[0].setting}
               copy={copySetting}
             />

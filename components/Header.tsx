@@ -41,7 +41,7 @@ const Header = ({ copy }: HeaderProps) => {
               copy(
                 `${window.location.protocol}//` +
                   `${window.location.host}/?` +
-                  `setting=ms-settings:`
+                  `redirect=ms-settings:`
               )
             }
           />

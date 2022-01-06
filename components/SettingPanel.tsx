@@ -63,7 +63,7 @@ const SettingPanel = ({ icons, title, page, copy }: SettingPanelProps) => {
                     `${window.location.protocol}//` +
                     `${window.location.host}/` +
                     `${page}?` +
-                    `setting=${setting.setting}`;
+                    `redirect=${setting.setting}`;
 
                   copy(basePath);
                 }}

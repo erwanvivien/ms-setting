@@ -10,12 +10,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     const query = router.query;
 
     if (!query || Object.keys(query).length === 0) return;
-    if (typeof query["setting"] !== "string") return;
+    if (typeof query["redirect"] !== "string") return;
 
-    const setting = decodeURI(query["setting"]);
-    if (!MS_SETTINGS.includes(setting)) return;
+    const redirect = decodeURI(query["redirect"]);
+    if (!MS_SETTINGS.includes(redirect)) return;
 
-    window.location.href = setting;
+    window.location.href = redirect;
   }, [router, router.query]);
 
   return <Component {...pageProps} />;

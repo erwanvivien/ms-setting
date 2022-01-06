@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       return;
     }
 
-    const setting = text.substring(text.indexOf("ms-settings:"));
+    const redirect = text.substring(text.indexOf("ms-settings:"));
 
     clearTimeout(myTimeout);
     navigator.clipboard.writeText(text);
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       setContent("");
     }, 1000);
 
-    setContent(setting);
+    setContent(redirect);
     setMyTimeout(t);
   };
 

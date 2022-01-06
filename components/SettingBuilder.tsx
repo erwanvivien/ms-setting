@@ -46,10 +46,16 @@ const builder: SettingBuilder = [
 type SettingBuilderProps = {
   title: string;
   setting: string;
+  page: string;
   copy: (text: string) => void;
 };
 
-const SettingBuilder = ({ title, copy, setting }: SettingBuilderProps) => {
+const SettingBuilder = ({
+  title,
+  copy,
+  setting,
+  page,
+}: SettingBuilderProps) => {
   return (
     <>
       <div style={{ display: "flex", flexDirection: "row" }}>
@@ -66,8 +72,8 @@ const SettingBuilder = ({ title, copy, setting }: SettingBuilderProps) => {
             const basePath =
               `${window.location.protocol}//` +
               `${window.location.host}/` +
-              `${title}?` +
-              `setting=${setting}`;
+              `${page}?` +
+              `redirect=${setting}`;
 
             copy(basePath);
           }}
