@@ -18,7 +18,12 @@ import SearchIcon from "../public/icons/ico_search.svg";
 import PrivacyIcon from "../public/icons/ico_privacy.svg";
 import UpdateIcon from "../public/icons/ico_update.svg";
 import Link from "next/link";
-import { Setting, settingsPanel } from "../pages/[settings]";
+import {
+  PossibleSettings,
+  Setting,
+  settingsPanel,
+  titleMap,
+} from "../pages/[settings]";
 import CopyIcon from "../public/copy.svg";
 
 const categories = [
@@ -108,9 +113,9 @@ type SelectionProps = {
 
 const Selection = ({ copy }: SelectionProps) => {
   const [search, setSearch] = React.useState("");
-  const [results, setResults] = React.useState<(Setting & { count: number })[]>(
-    []
-  );
+  const [results, setResults] = React.useState<
+    (Setting & { count: number; category: PossibleSettings })[]
+  >([]);
 
   const update = (text: string) => {
     setSearch(text);
@@ -121,14 +126,16 @@ const Selection = ({ copy }: SelectionProps) => {
 
     const res = entries.map(([k, v]) =>
       v.map((item) => {
-        if (!item.icon) return { ...item, count: 0 };
+        if (!item.icon)
+          return { ...item, count: 0, category: k as PossibleSettings };
 
         let match = 0;
         if (item.text.includes(text)) {
           match += 5;
         }
 
-        if (!item.keywords) return { ...item, count: match };
+        if (!item.keywords)
+          return { ...item, count: match, category: k as PossibleSettings };
 
         item.keywords.forEach((key) => {
           if (key.includes(text)) {
@@ -136,7 +143,7 @@ const Selection = ({ copy }: SelectionProps) => {
           }
         });
 
-        return { ...item, count: match };
+        return { ...item, count: match, category: k as PossibleSettings };
       })
     );
 
@@ -163,7 +170,9 @@ const Selection = ({ copy }: SelectionProps) => {
         results.map((r) => (
           <div key={r.setting} className={styles.result_container}>
             <Image src={r.icon} alt={r.text} width={40} height={40} />
-            <p className={styles.result_text}>{r.text}</p>
+            <p className={styles.result_text}>
+              {titleMap[r.category]} &gt; {r.text}
+            </p>
             <Image
               className={styles.header_clickable_img}
               src={CopyIcon}
