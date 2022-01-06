@@ -6,11 +6,11 @@ import styles from "../styles/Home.module.css";
 
 import CopyIcon from "../public/copy.svg";
 
-const Header: NextPage = () => {
-  const copy = (text: string) => {
-    navigator.clipboard.writeText(text);
-  };
+type HeaderProps = {
+  copy: (text: string) => void;
+};
 
+const Header = ({ copy }: HeaderProps) => {
   return (
     <>
       <div className={styles.header_account}>

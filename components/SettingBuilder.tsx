@@ -43,9 +43,13 @@ const builder: SettingBuilder = [
   },
 ];
 
-type SettingBuilderProps = { title: string };
+type SettingBuilderProps = {
+  title: string;
+  setting: string;
+  copy: (text: string) => void;
+};
 
-const SettingBuilder = ({ title }: SettingBuilderProps) => {
+const SettingBuilder = ({ title, copy, setting }: SettingBuilderProps) => {
   return (
     <>
       <div style={{ display: "flex", flexDirection: "row" }}>
@@ -58,6 +62,15 @@ const SettingBuilder = ({ title }: SettingBuilderProps) => {
           alt="Copy icon"
           width={40}
           height={40}
+          onClick={() => {
+            const basePath =
+              `${window.location.protocol}//` +
+              `${window.location.host}/` +
+              `${title}?` +
+              `setting=${setting}`;
+
+            copy(basePath);
+          }}
         />
       </div>
 

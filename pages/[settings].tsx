@@ -2,11 +2,11 @@ import React from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Settings.module.css";
+import styleshome from "../styles/Home.module.css";
 
 import SettingMore from "../components/SettingMore";
 import SettingBuilder from "../components/SettingBuilder";
 import SettingPanel from "../components/SettingPanel";
-import { useRouter } from "next/router";
 
 // Account
 import AccountConnexionIcon from "../public/icons/categories/acc_connexions.svg";
@@ -731,6 +731,27 @@ const Template = ({ page }: { page: PossibleSettings }) => {
     setTitle(titleMap[page]);
   }, [page]);
 
+  const [myTimeout, setMyTimeout] = React.useState<NodeJS.Timeout>(null as any);
+  const [content, setContent] = React.useState("");
+
+  const copySetting = (text: string) => {
+    if (!text.includes("ms-settings:")) {
+      return;
+    }
+
+    const setting = text.substring(text.indexOf("ms-settings:"));
+
+    clearTimeout(myTimeout);
+    navigator.clipboard.writeText(text);
+
+    const t = setTimeout(() => {
+      setContent("");
+    }, 1000);
+
+    setContent(setting);
+    setMyTimeout(t);
+  };
+
   return (
     <>
       <Head>
@@ -738,12 +759,27 @@ const Template = ({ page }: { page: PossibleSettings }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
+      {content && (
+        <div className={styleshome.modal}>Copied url for {content}</div>
+      )}
+
       <div style={{ display: "flex", flexDirection: "row" }}>
         <header className={styles.header}>
-          <SettingPanel page={page} icons={icons} title={title} />
+          <SettingPanel
+            page={page}
+            icons={icons}
+            title={title}
+            copy={copySetting}
+          />
         </header>
         <main className={styles.main}>
-          <SettingBuilder title={title} />
+          {icons && icons.length !== 0 && (
+            <SettingBuilder
+              title={title}
+              setting={icons[0].setting}
+              copy={copySetting}
+            />
+          )}
         </main>
         <footer className={styles.footer}>
           <SettingMore />

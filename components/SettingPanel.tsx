@@ -12,9 +12,10 @@ type SettingPanelProps = {
   icons: Setting[];
   title: string;
   page: string;
+  copy: (text: string) => void;
 };
 
-const SettingPanel = ({ icons, title, page }: SettingPanelProps) => {
+const SettingPanel = ({ icons, title, page, copy }: SettingPanelProps) => {
   return (
     <>
       <Link href="/">
@@ -64,8 +65,7 @@ const SettingPanel = ({ icons, title, page }: SettingPanelProps) => {
                     `${page}?` +
                     `setting=${setting.setting}`;
 
-                  console.log(basePath);
-                  navigator.clipboard.writeText(basePath);
+                  copy(basePath);
                 }}
               >
                 <Image
