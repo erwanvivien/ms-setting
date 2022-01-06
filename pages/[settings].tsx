@@ -911,7 +911,7 @@ const Template = ({ page }: { page: PossibleSettings }) => {
         <div className={styleshome.modal}>Copied url for {content}</div>
       )}
 
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div className={styles.main_container}>
         <header className={styles.header}>
           <SettingPanel
             page={page}

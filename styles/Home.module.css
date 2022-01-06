@@ -1,3 +1,16 @@
+.result_container {
+  display: flex;
+  width: 250px;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.result_text {
+  text-align: center;
+  flex: 1;
+}
+
 /* ========= Main ========= */
 
 .modal {

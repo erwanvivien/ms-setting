@@ -39,7 +39,7 @@ const SettingPanel = ({ icons, title, page, copy }: SettingPanelProps) => {
       <div className={styles.header_list}>
         {icons.map((setting) => {
           if (!setting.icon) {
-            return <div style={{ height: 60 }} key={setting.text}></div>;
+            return <div className={styles.spacer} key={setting.text}></div>;
           }
 
           return (
@@ -54,10 +54,7 @@ const SettingPanel = ({ icons, title, page, copy }: SettingPanelProps) => {
               <p className={styles.header_list_item_text}>{setting.text}</p>
 
               <div
-                style={{
-                  position: "absolute",
-                  right: 8,
-                }}
+                className={styles.panel_copy}
                 onClick={() => {
                   const basePath =
                     `${window.location.protocol}//` +

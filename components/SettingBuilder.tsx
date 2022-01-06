@@ -58,7 +58,7 @@ const SettingBuilder = ({
 }: SettingBuilderProps) => {
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div className={styles.setting_builder_container}>
         <h1>{title}</h1>
 
         <Image

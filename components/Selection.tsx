@@ -161,18 +161,9 @@ const Selection = ({ copy }: SelectionProps) => {
       {results &&
         results.length !== 0 &&
         results.map((r) => (
-          <div
-            key={r.setting}
-            style={{
-              display: "flex",
-              width: 250,
-              gap: 8,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+          <div key={r.setting} className={styles.result_container}>
             <Image src={r.icon} alt={r.text} width={40} height={40} />
-            <p style={{ textAlign: "center", flex: 1 }}>{r.text}</p>
+            <p className={styles.result_text}>{r.text}</p>
             <Image
               className={styles.header_clickable_img}
               src={CopyIcon}
