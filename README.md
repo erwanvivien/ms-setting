@@ -22,7 +22,7 @@ As you can see it is no clickable link, so we made it possible to have them as l
 using this syntax: `https://ms-setting.com/?redirect=YOUR_SETTING`
 
 Like so:
-[`https://ms-setting.com/?redirect=ms-settings:`](https://ms-setting.com/?setting=ms-settings:)
+[`https://ms-setting.com/?redirect=ms-settings:`](https://ms-setting.com/?redirect=ms-settings:)
 
 ## Thanks for reading
 
