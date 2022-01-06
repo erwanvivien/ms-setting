@@ -746,7 +746,7 @@ const Template = ({ page }: { page: PossibleSettings }) => {
 
     const t = setTimeout(() => {
       setContent("");
-    }, 1000);
+    }, 1500);
 
     setContent(redirect);
     setMyTimeout(t);

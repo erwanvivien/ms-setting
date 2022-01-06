@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 
     const t = setTimeout(() => {
       setContent("");
-    }, 1000);
+    }, 1500);
 
     setContent(redirect);
     setMyTimeout(t);
