@@ -734,7 +734,7 @@ const Template = ({ page }: { page: PossibleSettings }) => {
   return (
     <>
       <Head>
-        <title>MS Settings — Provide accurate help</title>
+        <title>MS Settings {title} — Provide accurate help</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
