@@ -28,23 +28,20 @@ const Header = ({ copy }: HeaderProps) => {
       </div>
 
       <div className={styles.header_clickable}>
-        <div>
-          <Image
-            id="copy"
-            className={styles.header_clickable_img}
-            src={CopyIcon}
-            alt="Copy icon"
-            width={40}
-            height={40}
-            onClick={() =>
-              copy(
-                `${window.location.protocol}//` +
-                  `${window.location.host}/?` +
-                  `redirect=ms-settings:`
-              )
-            }
-          />
-        </div>
+        <Image
+          className={styles.header_clickable_img}
+          src={CopyIcon}
+          alt="Copy icon"
+          width={40}
+          height={40}
+          onClick={() =>
+            copy(
+              `${window.location.protocol}//` +
+                `${window.location.host}/?` +
+                `redirect=ms-settings:`
+            )
+          }
+        />
       </div>
     </>
   );

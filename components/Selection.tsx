@@ -103,19 +103,69 @@ const sanitize = (title: string) => {
   }
 };
 
-// const a = settingsPanel.;
-
 const entries = Object.entries(settingsPanel);
 
 type SelectionProps = {
   copy: (text: string) => void;
 };
 
+type SearchResults = Setting & {
+  count: number;
+  category: PossibleSettings;
+};
+
+const SearchItem = ({ r, copy }: SelectionProps & { r: SearchResults }) => (
+  <div className={styles.result_container}>
+    <Image src={r.icon} alt={r.text} width={40} height={40} />
+    <p className={styles.result_text}>
+      {titleMap[r.category]} &gt; {r.text}
+    </p>
+    <Image
+      className={styles.header_clickable_img}
+      src={CopyIcon}
+      alt="Copy icon"
+      width={30}
+      height={30}
+      onClick={() =>
+        copy(
+          `${window.location.protocol}//` +
+            `${window.location.host}/?` +
+            `redirect=${r.setting}`
+        )
+      }
+    />
+  </div>
+);
+
+type CategoryProps = {
+  icon: any;
+  title: string;
+  description: string;
+};
+
+const CategoryItem = ({ category }: { category: CategoryProps }) => (
+  <Link href={sanitize(category.title)}>
+    <a className={styles.category}>
+      <Image
+        className={styles.category_image}
+        src={category.icon}
+        alt={category.description}
+        width={40}
+        height={40}
+      />
+      <div className={styles.category_container}>
+        <div className={styles.category_title}>{category.title}</div>
+        <div className={styles.category_description}>
+          {category.description}
+        </div>
+      </div>
+    </a>
+  </Link>
+);
+
 const Selection = ({ copy }: SelectionProps) => {
   const [search, setSearch] = React.useState("");
-  const [results, setResults] = React.useState<
-    (Setting & { count: number; category: PossibleSettings })[]
-  >([]);
+  const [results, setResults] = React.useState<SearchResults[]>([]);
 
   const update = (text: string) => {
     setSearch(text);
@@ -165,50 +215,14 @@ const Selection = ({ copy }: SelectionProps) => {
         value={search}
         onChange={(event) => update(event.target.value)}
       />
+
       {results &&
         results.length !== 0 &&
-        results.map((r) => (
-          <div key={r.setting} className={styles.result_container}>
-            <Image src={r.icon} alt={r.text} width={40} height={40} />
-            <p className={styles.result_text}>
-              {titleMap[r.category]} &gt; {r.text}
-            </p>
-            <Image
-              className={styles.header_clickable_img}
-              src={CopyIcon}
-              alt="Copy icon"
-              width={30}
-              height={30}
-              onClick={() =>
-                copy(
-                  `${window.location.protocol}//` +
-                    `${window.location.host}/?` +
-                    `redirect=${r.setting}`
-                )
-              }
-            />
-          </div>
-        ))}
+        results.map((r) => <SearchItem key={r.setting} copy={copy} r={r} />)}
 
       <div className={styles.category_list}>
         {categories.map((category) => (
-          <Link href={sanitize(category.title)} key={category.title}>
-            <a className={styles.category}>
-              <Image
-                className={styles.category_image}
-                src={category.icon}
-                alt={category.description}
-                width={40}
-                height={40}
-              />
-              <div className={styles.category_container}>
-                <div className={styles.category_title}>{category.title}</div>
-                <div className={styles.category_description}>
-                  {category.description}
-                </div>
-              </div>
-            </a>
-          </Link>
+          <CategoryItem key={category.title} category={category} />
         ))}
       </div>
     </>

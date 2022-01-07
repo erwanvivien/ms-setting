@@ -921,14 +921,12 @@ const Template = ({ page }: { page: PossibleSettings }) => {
           />
         </header>
         <main className={styles.main}>
-          {icons && icons.length !== 0 && (
-            <SettingBuilder
-              title={title}
-              page={page}
-              setting={icons[0].setting}
-              copy={copySetting}
-            />
-          )}
+          <SettingBuilder
+            title={title}
+            page={page}
+            setting={icons[0]?.setting}
+            copy={copySetting}
+          />
         </main>
         <footer className={styles.footer}>
           <SettingMore />

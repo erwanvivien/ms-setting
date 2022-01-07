@@ -62,21 +62,19 @@ const SettingBuilder = ({
         <h1>{title}</h1>
 
         <Image
-          id="copy"
           className={styles.header_clickable_img}
           src={CopyIcon}
           alt="Copy icon"
           width={40}
           height={40}
-          onClick={() => {
-            const basePath =
+          onClick={() =>
+            copy(
               `${window.location.protocol}//` +
-              `${window.location.host}/` +
-              `${page}?` +
-              `redirect=${setting}`;
-
-            copy(basePath);
-          }}
+                `${window.location.host}/` +
+                `${page}?` +
+                `redirect=${setting}`
+            )
+          }
         />
       </div>
 
