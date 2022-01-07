@@ -1,7 +1,0 @@
-<svg width="50pt" height="50pt" version="1.0" viewBox="0 0 50 50"
-  xmlns="http://www.w3.org/2000/svg">
-  <g transform="translate(0 50) scale(.1 -.1)">
-    <path d="m135 427c-3-7-4-91-3-187l3-175h110 110v185 185l-108 3c-82 2-109 0-112-11zm205-177v-171l-97 3-98 3-3 155c-1 85 0 160 2 167 4 9 32 13 101 13h95v-170z"/>
-    <path d="m220 120c0-5 9-10 20-10s20 5 20 10c0 6-9 10-20 10s-20-4-20-10z"/>
-  </g>
-</svg>
