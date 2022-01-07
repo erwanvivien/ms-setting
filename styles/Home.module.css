@@ -153,7 +153,7 @@
 .category_list {
   margin-top: 50px;
 
-  max-width: min(1330px, 80vw);
+  max-width: min(1330px, 90vw);
 
   display: grid; /* 1 */
   grid-template-columns: repeat(auto-fill, 250px); /* 2 */
