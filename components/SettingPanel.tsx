@@ -13,21 +13,26 @@ type SettingPanelProps = {
   title: string;
   page: string;
   copy: (text: string) => void;
+  select: React.Dispatch<React.SetStateAction<StaticImageData>>;
 };
 
 type PanelItemProps = {
   copy: (text: string) => void;
   setting: Setting;
   page: string;
+  select: React.Dispatch<React.SetStateAction<StaticImageData>>;
 };
 
-const PanelItem = ({ copy, setting, page }: PanelItemProps) => {
+const PanelItem = ({ copy, setting, page, select }: PanelItemProps) => {
   if (!setting.icon) {
     return <div className={styles.spacer}></div>;
   }
 
   return (
-    <div className={styles.header_list_item}>
+    <div
+      className={styles.header_list_item}
+      onClick={() => select(setting.image)}
+    >
       <Image
         className={styles.header_list_item_image}
         src={setting.icon}
@@ -61,7 +66,7 @@ const PanelItem = ({ copy, setting, page }: PanelItemProps) => {
   );
 };
 
-const SettingPanel = ({ icons, title, page, copy }: SettingPanelProps) => {
+const SettingPanel = (props: SettingPanelProps) => {
   return (
     <>
       <Link href="/">
@@ -80,14 +85,15 @@ const SettingPanel = ({ icons, title, page, copy }: SettingPanelProps) => {
         <input className={styles.header_search} />
       </div>
 
-      <h3 className={styles.header_title}>{title}</h3>
+      <h3 className={styles.header_title}>{props.title}</h3>
 
       <div className={styles.header_list}>
-        {icons.map((setting) => (
+        {props.icons.map((setting) => (
           <PanelItem
             key={setting.text}
-            copy={copy}
-            page={page}
+            copy={props.copy}
+            page={props.page}
+            select={props.select}
             setting={setting}
           />
         ))}

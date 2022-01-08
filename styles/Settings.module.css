@@ -400,7 +400,7 @@ input[type="checkbox"].checkbox_input:after {
   display: flex;
   flex-direction: column;
 
-  padding-top: 72px;
+  padding-top: 20px; /* Need for <SettingImage /> */
   align-items: flex-start;
 
   padding-left: 350px;
@@ -409,5 +409,5 @@ input[type="checkbox"].checkbox_input:after {
 }
 
 .main > * {
-  max-width: 575px;
+  /* max-width: 575px; */ /* Need for <SettingImage /> */
 }

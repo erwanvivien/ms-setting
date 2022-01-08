@@ -128,12 +128,123 @@ import UpdateSaveIcon from "../public/icons/categories/updates_save.svg";
 import UpdateSecurityIcon from "../public/icons/categories/updates_security.svg";
 import UpdateSolveIcon from "../public/icons/categories/updates_solve.svg";
 import UpdateWindowsIcon from "../public/icons/categories/updates_windows.svg";
+import SettingImage from "../components/SettingImage";
+
+// Image for setting content
+import AccountsAccessWorkOrSchool from "../public/settings/accounts/accessworkorschool.png";
+import AccountsEmailAccounts from "../public/settings/accounts/emailaccounts.png";
+import AccountsFamilyOtherUsers from "../public/settings/accounts/familyotherusers.png";
+import AccountsSignInOptions from "../public/settings/accounts/signinoptions.png";
+import AccountsSyncYourSettings from "../public/settings/accounts/syncyoursettings.png";
+import AccountsYourInfo from "../public/settings/accounts/yourinfo.png";
+import AppsAppsFeatures from "../public/settings/apps/appsfeatures.png";
+import AppsAppsForWebsites from "../public/settings/apps/appsforwebsites.png";
+import AppsDefaultApps from "../public/settings/apps/defaultapps.png";
+import AppsOfflineMaps from "../public/settings/apps/offlinemaps.png";
+import AppsStartup from "../public/settings/apps/startup.png";
+import AppsVideoPlayback from "../public/settings/apps/videoplayback.png";
+import DevicesAutoplay from "../public/settings/devices/autoplay.png";
+import DevicesBluetoothOtherDevices from "../public/settings/devices/bluetoothotherdevices.png";
+import DevicesMouse from "../public/settings/devices/mouse.png";
+import DevicesPenWindowsInk from "../public/settings/devices/penwindowsink.png";
+import DevicesPrintersScanners from "../public/settings/devices/printersscanners.png";
+import DevicesTyping from "../public/settings/devices/typing.png";
+import DevicesUsb from "../public/settings/devices/usb.png";
+import EaseAudio from "../public/settings/ease/audio.png";
+import EaseClosedCaptions from "../public/settings/ease/closedcaptions.png";
+import EaseColorFilters from "../public/settings/ease/colorfilters.png";
+import EaseDisplay from "../public/settings/ease/display.png";
+import EaseEyeControl from "../public/settings/ease/eyecontrol.png";
+import EaseHighContrast from "../public/settings/ease/highcontrast.png";
+import EaseKeyboard from "../public/settings/ease/keyboard.png";
+import EaseMagnifier from "../public/settings/ease/magnifier.png";
+import EaseMouse from "../public/settings/ease/mouse.png";
+import EaseMousePointer from "../public/settings/ease/mousepointer.png";
+import EaseNarrator from "../public/settings/ease/narrator.png";
+import EaseSpeech from "../public/settings/ease/speech.png";
+import EaseTextCursor from "../public/settings/ease/textcursor.png";
+import GamingCaptures from "../public/settings/gaming/captures.png";
+import GamingGamemode from "../public/settings/gaming/gamemode.png";
+import GamingXboxGameBar from "../public/settings/gaming/xboxgamebar.png";
+import GamingXboxNetworking from "../public/settings/gaming/xboxnetworking.png";
+import NetworkAirplaneMode from "../public/settings/network/airplanemode.png";
+import NetworkDialup from "../public/settings/network/dialup.png";
+import NetworkEthernet from "../public/settings/network/ethernet.png";
+import NetworkMobileHotspot from "../public/settings/network/mobilehotspot.png";
+import NetworkProxy from "../public/settings/network/proxy.png";
+import NetworkStatus from "../public/settings/network/status.png";
+import NetworkVpn from "../public/settings/network/vpn.png";
+import NetworkWifi from "../public/settings/network/wifi.png";
+import PersonalizationBackground from "../public/settings/personalization/background.png";
+import PersonalizationColors from "../public/settings/personalization/colors.png";
+import PersonalizationFonts from "../public/settings/personalization/fonts.png";
+import PersonalizationLockscreen from "../public/settings/personalization/lockscreen.png";
+import PersonalizationStart from "../public/settings/personalization/start.png";
+import PersonalizationTaskbar from "../public/settings/personalization/taskbar.png";
+import PersonalizationThemes from "../public/settings/personalization/themes.png";
+import PrivacyAccountInfo from "../public/settings/privacy/accountinfo.png";
+import PrivacyActivityHistory from "../public/settings/privacy/activityhistory.png";
+import PrivacyAppDiagnostics from "../public/settings/privacy/appdiagnostics.png";
+import PrivacyAutomaticFileDownloads from "../public/settings/privacy/automaticfiledownloads.png";
+import PrivacyBackgroundApps from "../public/settings/privacy/backgroundapps.png";
+import PrivacyCalendar from "../public/settings/privacy/calendar.png";
+import PrivacyCallHistory from "../public/settings/privacy/callhistory.png";
+import PrivacyCamera from "../public/settings/privacy/camera.png";
+import PrivacyContacts from "../public/settings/privacy/contacts.png";
+import PrivacyDiagnosticsFeedback from "../public/settings/privacy/diagnosticsfeedback.png";
+import PrivacyDocuments from "../public/settings/privacy/documents.png";
+import PrivacyEmail from "../public/settings/privacy/email.png";
+import PrivacyFilesystem from "../public/settings/privacy/filesystem.png";
+import PrivacyGeneral from "../public/settings/privacy/general.png";
+import PrivacyInkingTypingPersonalization from "../public/settings/privacy/inkingtypingpersonalization.png";
+import PrivacyLocation from "../public/settings/privacy/location.png";
+import PrivacyMessaging from "../public/settings/privacy/messaging.png";
+import PrivacyMicrophone from "../public/settings/privacy/microphone.png";
+import PrivacyNotifications from "../public/settings/privacy/notifications.png";
+import PrivacyOtherDevices from "../public/settings/privacy/otherdevices.png";
+import PrivacyPhoneCalls from "../public/settings/privacy/phonecalls.png";
+import PrivacyPictures from "../public/settings/privacy/pictures.png";
+import PrivacyRadios from "../public/settings/privacy/radios.png";
+import PrivacySpeech from "../public/settings/privacy/speech.png";
+import PrivacyTasks from "../public/settings/privacy/tasks.png";
+import PrivacyVideos from "../public/settings/privacy/videos.png";
+import PrivacyVoiceActivation from "../public/settings/privacy/voiceactivation.png";
+import SearchPermissionsHistory from "../public/settings/search/permissionshistory.png";
+import SearchSearchingWindows from "../public/settings/search/searchingwindows.png";
+import SystemAbout from "../public/settings/system/about.png";
+import SystemClipboard from "../public/settings/system/clipboard.png";
+import SystemDisplay from "../public/settings/system/display.png";
+import SystemFocusAssist from "../public/settings/system/focusassist.png";
+import SystemMultitasking from "../public/settings/system/multitasking.png";
+import SystemNotificationsActions from "../public/settings/system/notificationsactions.png";
+import SystemPowerSleep from "../public/settings/system/powersleep.png";
+import SystemProjectingToThisPc from "../public/settings/system/projectingtothispc.png";
+import SystemRemoteDesktop from "../public/settings/system/remotedesktop.png";
+import SystemSharedEexperiences from "../public/settings/system/sharedexperiences.png";
+import SystemSound from "../public/settings/system/sound.png";
+import SystemStorage from "../public/settings/system/storage.png";
+import SystemTablet from "../public/settings/system/tablet.png";
+import TimeDatetime from "../public/settings/time/datetime.png";
+import TimeLanguage from "../public/settings/time/language.png";
+import TimeRegion from "../public/settings/time/region.png";
+import TimeSpeech from "../public/settings/time/speech.png";
+import UpdateActivation from "../public/settings/update/activation.png";
+import UpdateBackup from "../public/settings/update/backup.png";
+import UpdateDeliveryOptimization from "../public/settings/update/deliveryoptimization.png";
+import UpdateFindMydevice from "../public/settings/update/findmydevice.png";
+import UpdateForDevelopers from "../public/settings/update/fordevelopers.png";
+import UpdateRecovery from "../public/settings/update/recovery.png";
+import UpdateTroubleshoot from "../public/settings/update/troubleshoot.png";
+import UpdateWindowsInsiderProgram from "../public/settings/update/windowsinsiderprogram.png";
+import UpdateWindowsSecurity from "../public/settings/update/windowssecurity.png";
+import UpdateWindowsUpdate from "../public/settings/update/windowsupdate.png";
 
 export interface Setting {
   icon: any;
   text: string;
   setting: string;
   keywords: string[];
+  image: StaticImageData;
 }
 
 interface SettingMap {
@@ -150,36 +261,42 @@ export const settingsPanel = createSettings({
       text: "Your info",
       setting: "ms-settings:yourinfo",
       keywords: ["account", "info", "information", "avatar", "microsoft"],
+      image: AccountsYourInfo,
     },
     {
       icon: AccountEmailIcon,
       text: "Email & accounts",
       setting: "ms-settings:emailandaccounts",
       keywords: ["account", "email", "mail"],
+      image: AccountsEmailAccounts,
     },
     {
       icon: AccountConnexionIcon,
       text: "Sign-in options",
       setting: "ms-settings:signinoptions",
       keywords: ["account", "sign", "sign-in", "log", "log-in"],
+      image: AccountsSignInOptions,
     },
     {
       icon: AccountSchoolIcon,
       text: "Access work or school",
       setting: "ms-settings:workplace",
       keywords: ["account", "workplace", "school"],
+      image: AccountsAccessWorkOrSchool,
     },
     {
       icon: AccountFamilyIcon,
       text: "Family & other users",
       setting: "ms-settings:otherusers",
       keywords: ["account", "family", "user"],
+      image: AccountsFamilyOtherUsers,
     },
     {
       icon: AccountSyncIcon,
       text: "Sync you settings",
       setting: "ms-settings:sync",
       keywords: ["account", "sync", "setting"],
+      image: AccountsSyncYourSettings,
     },
   ],
   // Ok
@@ -189,80 +306,106 @@ export const settingsPanel = createSettings({
       text: "Display",
       setting: "ms-settings:easeofaccess-display",
       keywords: ["ease", "display", "ease"],
+      image: EaseDisplay,
     },
     {
       icon: AccessCursorIcon,
       text: "Mouse pointer",
       setting: "ms-settings:easeofaccess-cursorandpointersize",
       keywords: ["ease", "cursor", "pointer", "mouse"],
+      image: EaseMousePointer,
     },
     {
       icon: AccessTextCursorIcon,
       text: "Text Cursor",
       setting: "ms-settings:easeofaccess-cursor",
       keywords: ["ease", "cursor", "text"],
+      image: EaseTextCursor,
     },
     {
       icon: AccessSearchIcon,
       text: "Magnifier",
       setting: "ms-settings:easeofaccess-magnifier",
       keywords: ["ease", "magnifier", "mag"],
+      image: EaseMagnifier,
     },
     {
       icon: AccessColorsIcon,
       text: "Color Filters",
       setting: "ms-settings:easeofaccess-colorfilter",
       keywords: ["ease", "color", "filter"],
+      image: EaseColorFilters,
     },
     {
       icon: AccessContrastIcon,
       setting: "ms-settings:easeofaccess-highcontrast",
       text: "High Contrast",
       keywords: ["ease", "contrast"],
+      image: EaseHighContrast,
     },
     {
       icon: AccessNarratorIcon,
       setting: "ms-settings:easeofaccess-narrator",
       text: "Narrator",
       keywords: ["ease", "narrator"],
+      image: EaseNarrator,
     },
-    { icon: undefined, setting: "", text: "ease-spacer1", keywords: [] },
+    {
+      icon: undefined,
+      setting: "",
+      text: "ease-spacer1",
+      keywords: [],
+      image: undefined as any,
+    },
     {
       icon: AccessAudioIcon,
       setting: "ms-settings:easeofaccess-audio",
       text: "Audio",
       keywords: ["ease", "audio"],
+      image: EaseAudio,
     },
     {
       icon: AccessSubtitlesIcon,
       setting: "ms-settings:easeofaccess-closedcaptioning",
       text: "Closed captions",
       keywords: ["ease", "caption"],
+      image: EaseClosedCaptions,
     },
-    { icon: undefined, setting: "", text: "ease-spacer2", keywords: [] },
+    {
+      icon: undefined,
+      setting: "",
+      text: "ease-spacer2",
+      keywords: [],
+      image: undefined as any,
+    },
+
     {
       icon: AccessVoiceIcon,
       setting: "ms-settings:easeofaccess-speechrecognition",
       text: "Speech",
       keywords: ["ease", "speech"],
+      image: EaseSpeech,
     },
     {
       icon: AccessKeyboardIcon,
       setting: "ms-settings:easeofaccess-keyboard",
       text: "Keyboard",
       keywords: ["ease", "keyboard"],
+      image: EaseKeyboard,
     },
     {
       icon: AccessMouseIcon,
       setting: "ms-settings:easeofaccess-mouse",
       text: "Mouse",
       keywords: ["ease", "mouse"],
+      image: EaseMouse,
     },
     {
       icon: AccessVisualControlsIcon,
       setting: "ms-settings:easeofaccess-eyecontrol",
       text: "Eye Control",
       keywords: ["ease", "eye", "control"],
+      image: EaseEyeControl,
     },
   ],
   // Ok
@@ -272,36 +415,42 @@ export const settingsPanel = createSettings({
       setting: "ms-settings:appsfeatures",
       text: "Apps & features",
       keywords: ["app", "application", "feature"],
+      image: AppsAppsFeatures,
     },
     {
       icon: AppDefaultIcon,
       setting: "ms-settings:defaultapps",
       text: "Default apps",
       keywords: ["app", "application", "default"],
+      image: AppsDefaultApps,
     },
     {
       icon: AppMapIcon,
       setting: "ms-settings:maps",
       text: "Offline maps",
       keywords: ["app", "application", "map"],
+      image: AppsOfflineMaps,
     },
     {
       icon: AppWebIcon,
       setting: "ms-settings:appsforwebsites",
       text: "Apps for websites",
       keywords: ["app", "application", "site", "web"],
+      image: AppsAppsForWebsites,
     },
     {
       icon: AppvideoPlayerIcon,
       setting: "ms-settings:videoplayback",
       text: "Video playback",
       keywords: ["app", "application", "video", "playback"],
+      image: AppsVideoPlayback,
     },
     {
       icon: AppStartupIcon,
       setting: "ms-settings:startupapps",
       text: "Startup",
       keywords: ["app", "application", "startup"],
+      image: AppsStartup,
     },
   ],
   // Ok
@@ -311,46 +460,61 @@ export const settingsPanel = createSettings({
       setting: "ms-settings:personalization-background",
       text: "Background",
       keywords: ["personalization", "background"],
+      image: PersonalizationBackground,
     },
     {
       icon: CustomColorsIcon,
       setting: "ms-settings:personalization-colors",
       text: "Colors",
       keywords: ["personalization", "color"],
+      image: PersonalizationColors,
     },
     {
       icon: CustomLockscreenIcon,
       setting: "ms-settings:lockscreen",
       text: "Lock screen",
       keywords: ["personalization", "lock", "lockscreen"],
+      image: PersonalizationLockscreen,
     },
     {
       icon: CustomThemesIcon,
       setting: "ms-settings:themes",
       text: "Themes",
       keywords: ["personalization", "theme"],
+      image: PersonalizationThemes,
     },
     {
       icon: CustomFontIcon,
       setting: "ms-settings:fonts",
       text: "Fonts",
       keywords: ["personalization", "font"],
+      image: PersonalizationFonts,
     },
     {
       icon: CustomStartupIcon,
       setting: "ms-settings:personalization-start",
       text: "Start",
       keywords: ["personalization", "start"],
+      image: PersonalizationStart,
     },
     {
       icon: CustomTaskbarIcon,
       setting: "ms-settings:taskbar",
       text: "Taskbar",
       keywords: ["personalization", "taskbar"],
+      image: PersonalizationTaskbar,
     },
   ],
   // Ok
-  phone: [],
+  phone: [
+    {
+      icon: undefined,
+      setting: "",
+      text: "phone-temp",
+      keywords: [],
+      image: undefined as any,
+    },
+  ],
   // Ok
   gaming: [
     {
@@ -358,24 +522,28 @@ export const settingsPanel = createSettings({
       setting: "ms-settings:gaming-gamebar",
       text: "Game bar",
       keywords: ["game", "bar"],
+      image: GamingXboxGameBar,
     },
     {
       icon: GamesCaptureIcon,
       setting: "ms-settings:gaming-gamedvr",
       text: "Captures",
       keywords: ["game", "capture"],
+      image: GamingCaptures,
     },
     {
       icon: GamesModeIcon,
       setting: "ms-settings:gaming-gamemode",
       text: "Game Mode",
       keywords: ["game", "mode"],
+      image: GamingGamemode,
     },
     {
       icon: GamesXboxIcon,
       setting: "ms-settings:gaming-xboxnetworking",
       text: "Xbox Networking",
       keywords: ["game", "xbox", "network"],
+      image: GamingXboxNetworking,
     },
   ],
   // Ok
@@ -385,24 +553,28 @@ export const settingsPanel = createSettings({
       setting: "ms-settings:dateandtime",
       text: "Date & time",
       keywords: ["time", "date"],
+      image: TimeDatetime,
     },
     {
       icon: TimeRegionIcon,
       setting: "ms-settings:regionformatting",
       text: "Region",
       keywords: ["time", "region", "formatting"],
+      image: TimeRegion,
     },
     {
       icon: TimeLanguageIcon,
       setting: "ms-settings:regionlanguage",
       text: "Language",
       keywords: ["time", "region", "language"],
+      image: TimeLanguage,
     },
     {
       icon: TimeVoiceIcon,
       setting: "ms-settings:speech",
       text: "Speech",
       keywords: ["time", "speech"],
+      image: TimeSpeech,
     },
   ],
   // Ok
@@ -412,48 +584,56 @@ export const settingsPanel = createSettings({
       setting: "ms-settings:network-status",
       text: "Status",
       keywords: ["network", "status"],
+      image: NetworkStatus,
     },
     {
       icon: NetworkWifiIcon,
       setting: "ms-settings:network-wifi",
       text: "Wi-Fi",
       keywords: ["network", "wifi", "wi-fi"],
+      image: NetworkWifi,
     },
     {
       icon: NetworkEthernetIcon,
       setting: "ms-settings:network-ethernet",
       text: "Ethernet",
       keywords: ["network", "ethernet"],
+      image: NetworkEthernet,
     },
     {
       icon: NetworkAccessIcon,
       setting: "ms-settings:network-dialup",
       text: "Dial-up",
       keywords: ["network", "dial", "dial-up"],
+      image: NetworkDialup,
     },
     {
       icon: NetworkVpnIcon,
       setting: "ms-settings:network-vpn",
       text: "VPN",
       keywords: ["network", "vpn"],
+      image: NetworkVpn,
     },
     {
       icon: NetworkAirplaneIcon,
       setting: "ms-settings:network-airplanemode",
       text: "Airplane mode",
       keywords: ["network", "airplane", "mode"],
+      image: NetworkAirplaneMode,
     },
     {
       icon: NetworkAccessPointIcon,
       setting: "ms-settings:network-mobilehotspot",
       text: "Mobile hotspot",
       keywords: ["network", "mobile", "hotstop"],
+      image: NetworkMobileHotspot,
     },
     {
       icon: NetworkProxyIcon,
       setting: "ms-settings:network-proxy",
       text: "Proxy",
       keywords: ["network", "proxy"],
+      image: NetworkProxy,
     },
   ],
   // Ok
@@ -463,42 +643,49 @@ export const settingsPanel = createSettings({
       text: "Bluetooth & other devices",
       setting: "ms-settings:connecteddevices",
       keywords: ["device", "bluetooth", "other"],
+      image: DevicesBluetoothOtherDevices,
     },
     {
       icon: PeriphPrintersIcon,
       text: "Printers & scanners",
       setting: "ms-settings:printers",
       keywords: ["device", "printer", "scanner"],
+      image: DevicesPrintersScanners,
     },
     {
       icon: PeriphMouseIcon,
       text: "Mouse",
       setting: "ms-settings:mousetouchpad",
       keywords: ["device", "mouse", "touchpad"],
+      image: DevicesMouse,
     },
     {
       icon: PeriphTypingIcon,
       text: "Typing",
       setting: "ms-settings:typing",
       keywords: ["device", "typing"],
+      image: DevicesTyping,
     },
     {
       icon: PeriphPenIcon,
       text: "Pen & Windows Ink",
       setting: "ms-settings:pen",
       keywords: ["device", "pen", "ink"],
+      image: DevicesPenWindowsInk,
     },
     {
       icon: PeriphAutoPlayIcon,
       text: "AutoPlay",
       setting: "ms-settings:autoplay",
       keywords: ["device", "autoplay"],
+      image: DevicesAutoplay,
     },
     {
       icon: PeriphUsbIcon,
       text: "USB",
       setting: "ms-settings:usb",
       keywords: ["device", "usb"],
+      image: DevicesUsb,
     },
   ],
   // Ok
@@ -508,168 +695,207 @@ export const settingsPanel = createSettings({
       setting: "ms-settings:privacy",
       text: "General",
       keywords: ["privacy"],
+      image: PrivacyGeneral,
     },
     {
       icon: PrivacyTasksIcon,
       setting: "ms-settings:privacy-speechtyping",
       text: "Inking & typing...",
       keywords: ["privacy", "ink", "typing"],
+      image: PrivacyInkingTypingPersonalization,
     },
     {
       icon: PrivacyDiagnoIcon,
       setting: "ms-settings:privacy-feedback",
       text: "Diagnostics & feedback",
       keywords: ["privacy", "diagnostic", "feedback"],
+      image: PrivacyDiagnosticsFeedback,
     },
     {
       icon: PrivacyHistoIcon,
       setting: "ms-settings:privacy-activityhistory",
       text: "Activity history",
       keywords: ["privacy", "activity", "history"],
+      image: PrivacyActivityHistory,
     },
 
-    { icon: undefined, setting: "", text: "privacy-spacer2", keywords: [] },
+    {
+      icon: undefined,
+      setting: "",
+      text: "privacy-spacer2",
+      keywords: [],
+      image: undefined as any,
+    },
 
     {
       icon: PrivacyVoiceIcon,
       setting: "ms-settings:privacy-speech",
       text: "Speech",
       keywords: ["privacy", "speech"],
+      image: PrivacySpeech,
     },
 
-    { icon: undefined, setting: "", text: "privacy-spacer3", keywords: [] },
+    {
+      icon: undefined,
+      setting: "",
+      text: "privacy-spacer3",
+      keywords: [],
+      image: undefined as any,
+    },
 
     {
       icon: PrivacyLocationIcon,
       setting: "ms-settings:privacy-location",
       text: "Location",
       keywords: ["privacy", "location"],
+      image: PrivacyLocation,
     },
     {
       icon: PrivacyCamIcon,
       setting: "ms-settings:privacy-webcam",
       text: "Camera",
       keywords: ["privacy", "webcam", "camera"],
+      image: PrivacyCamera,
     },
     {
       icon: PrivacyMicIcon,
       setting: "ms-settings:privacy-microphone",
       text: "Microphone",
       keywords: ["privacy", "microphone"],
+      image: PrivacyMicrophone,
     },
     {
       icon: PrivacyVoice_activationIcon,
       setting: "ms-settings:privacy-voiceactivation",
       text: "Voice activation",
       keywords: ["privacy", "voice", "activation"],
+      image: PrivacyVoiceActivation,
     },
     {
       icon: PrivacyNotifIcon,
       setting: "ms-settings:privacy-notifications",
       text: "Notifications",
       keywords: ["privacy", "notification"],
+      image: PrivacyNotifications,
     },
     {
       icon: PrivacyInfoIcon,
       setting: "ms-settings:privacy-accountinfo",
       text: "Account info",
       keywords: ["privacy", "account", "info"],
+      image: PrivacyAccountInfo,
     },
     {
       icon: PrivacyContactIcon,
       setting: "ms-settings:privacy-contacts",
       text: "Contacts",
       keywords: ["privacy", "contact"],
+      image: PrivacyContacts,
     },
     {
       icon: PrivacyCalendarIcon,
       setting: "ms-settings:privacy-calendar",
       text: "Calendar",
       keywords: ["privacy", "calendar"],
+      image: PrivacyCalendar,
     },
     {
       icon: PrivacyCallIcon,
       setting: "ms-settings:privacy-phonecalls",
       text: "Phone calls",
       keywords: ["privacy", "phone", "call"],
+      image: PrivacyPhoneCalls,
     },
     {
       icon: PrivacyHisto_callIcon,
       setting: "ms-settings:privacy-callhistory",
       text: "Call history",
       keywords: ["privacy", "history", "call"],
+      image: PrivacyCallHistory,
     },
     {
       icon: PrivacyMailIcon,
       setting: "ms-settings:privacy-email",
       text: "Email",
       keywords: ["privacy", "email", "mail"],
+      image: PrivacyEmail,
     },
     {
       icon: PrivacyManuscritIcon,
       setting: "ms-settings:privacy-tasks",
       text: "Tasks",
       keywords: ["privacy", "task"],
+      image: PrivacyTasks,
     },
     {
       icon: PrivacyMessageIcon,
       setting: "ms-settings:privacy-messaging",
       text: "Messaging",
       keywords: ["privacy", "messaging", "message"],
+      image: PrivacyMessaging,
     },
     {
       icon: PrivacyRadiosIcon,
       setting: "ms-settings:privacy-radios",
       text: "Radios",
       keywords: ["privacy", "radio"],
+      image: PrivacyRadios,
     },
     {
       icon: PrivacyOther_devicesIcon,
       setting: "ms-settings:privacy-customdevices",
       text: "Other devices",
       keywords: ["privacy", "custom", "device"],
+      image: PrivacyOtherDevices,
     },
     {
       icon: PrivacyBackgroundAppIcon,
       setting: "ms-settings:privacy-backgroundapps",
       text: "Background apps",
       keywords: ["privacy", "background", "app"],
+      image: PrivacyBackgroundApps,
     },
     {
       icon: PrivacyIcon,
       setting: "ms-settings:privacy-appdiagnostics",
       text: "App diagnostics",
       keywords: ["privacy", "diagnostic", "app"],
+      image: PrivacyAppDiagnostics,
     },
     {
       icon: PrivacyAutoDownloadIcon,
       setting: "ms-settings:privacy-automaticfiledownloads",
       text: "Automatic file downloads",
       keywords: ["privacy", "file", "download", "automatic"],
+      image: PrivacyAutomaticFileDownloads,
     },
     {
       icon: PrivacyDocumentsIcon,
       setting: "ms-settings:privacy-documents",
       text: "Documents",
       keywords: ["privacy", "document"],
+      image: PrivacyDocuments,
     },
     {
       icon: PrivacyPicturesIcon,
       setting: "ms-settings:privacy-pictures",
       text: "Pictures",
       keywords: ["privacy", "picture"],
+      image: PrivacyPictures,
     },
     {
       icon: PrivacyVideosIcon,
       setting: "ms-settings:privacy-videos",
       text: "Videos",
-      keywords: ["privacy", "document"],
+      keywords: ["privacy", "video"],
+      image: PrivacyVideos,
     },
     {
       icon: PrivacyFilesystemIcon,
       setting: "ms-settings:privacy-broadfilesystemaccess",
       text: "File system",
       keywords: ["privacy", "file", "system"],
+      image: PrivacyFilesystem,
     },
   ],
   // Ok
@@ -679,12 +905,14 @@ export const settingsPanel = createSettings({
       setting: "ms-settings:search-permissions",
       text: "Permissions & history",
       keywords: ["search", "permission", "history"],
+      image: SearchPermissionsHistory,
     },
     {
       icon: SearchSearchIcon,
       setting: "ms-settings:cortana-windowssearch",
       text: "Searching Windows",
       keywords: ["search", "cortana", "window"],
+      image: SearchSearchingWindows,
     },
   ],
   // Ok
@@ -694,84 +922,98 @@ export const settingsPanel = createSettings({
       text: "Display",
       setting: "ms-settings:display",
       keywords: ["system", "display"],
+      image: SystemDisplay,
     },
     {
       icon: SystemSoundIcon,
       text: "Sound",
       setting: "ms-settings:sound",
       keywords: ["system", "sound"],
+      image: SystemSound,
     },
     {
       icon: SystemNotifIcon,
       text: "Notification & actions",
       setting: "ms-settings:notifications",
       keywords: ["system", "notification", "action"],
+      image: SystemNotificationsActions,
     },
     {
       icon: SystemConcentrationIcon,
       text: "Focus assist",
       setting: "ms-settings:quiethours",
       keywords: ["system", "focus", "assist", "quiet"],
+      image: SystemFocusAssist,
     },
     {
       icon: SystemAlimIcon,
       text: "Power & sleep",
       setting: "ms-settings:powersleep",
       keywords: ["system", "power", "sleep"],
+      image: SystemPowerSleep,
     },
     {
       icon: SystemBatteryIcon,
       text: "Battery Saver",
       setting: "ms-settings:batterysaver",
       keywords: ["system", "battery", "saver"],
+      image: undefined as any, // TODO
     },
     {
       icon: SystemStorageIcon,
       text: "Storage",
       setting: "ms-settings:storagesense",
       keywords: ["system", "storage"],
+      image: SystemStorage,
     },
     {
       icon: SystemTabletIcon,
       text: "Tablet",
       setting: "ms-settings:tabletmode",
       keywords: ["system", "tablet"],
+      image: SystemTablet,
     },
     {
       icon: SystemMultitaskIcon,
       text: "Multitasking",
       setting: "ms-settings:multitasking",
       keywords: ["system", "multitasking"],
+      image: SystemMultitasking,
     },
     {
       icon: SystemProjectionIcon,
       text: "Projecting to this PC",
       setting: "ms-settings:project",
       keywords: ["system", "project"],
+      image: SystemProjectingToThisPc,
     },
     {
       icon: SystemSharedIcon,
       text: "Shared experiences",
       setting: "ms-settings:crossdevice",
       keywords: ["system", "shared", "experience", "crossdevice"],
+      image: SystemSharedEexperiences,
     },
     {
       icon: SystemCopyIcon,
       text: "Clipboard",
       setting: "ms-settings:clipboard",
       keywords: ["system", "clipboard"],
+      image: SystemClipboard,
     },
     {
       icon: SystemDistantIcon,
       text: "Remote Desktop",
       setting: "ms-settings:remotedesktop",
       keywords: ["system", "remote", "desktop"],
+      image: SystemRemoteDesktop,
     },
     {
       icon: SystemAproposIcon,
       text: "About",
       setting: "ms-settings:about",
       keywords: ["system", "about"],
+      image: SystemAbout,
     },
   ],
   // Ok
@@ -781,60 +1023,70 @@ export const settingsPanel = createSettings({
       setting: "ms-settings:windowsupdate",
       text: "Windows Update",
       keywords: ["update", "window", "update"],
+      image: UpdateWindowsUpdate,
     },
     {
       icon: UpdateOptiIcon,
       setting: "ms-settings:delivery-optimization",
       text: "Delivery Optimization",
       keywords: ["update", "delivery", "optimization"],
+      image: UpdateDeliveryOptimization,
     },
     {
       icon: UpdateSecurityIcon,
       setting: "ms-settings:windowsdefender",
       text: "Windows Security",
       keywords: ["update", "window", "defender", "security"],
+      image: UpdateWindowsSecurity,
     },
     {
       icon: UpdateSaveIcon,
       setting: "ms-settings:backup",
       text: "Backup",
       keywords: ["update", "backup"],
+      image: UpdateBackup,
     },
     {
       icon: UpdateSolveIcon,
       setting: "ms-settings:troubleshoot",
       text: "Troubleshoot",
       keywords: ["update", "troubleshoot", "trouble"],
+      image: UpdateTroubleshoot,
     },
     {
       icon: UpdateRecoverIcon,
       setting: "ms-settings:recovery",
       text: "Recovery",
       keywords: ["update", "recovery"],
+      image: UpdateRecovery,
     },
     {
       icon: UpdateActivateIcon,
       setting: "ms-settings:activation",
       text: "Activation",
       keywords: ["update", "activation"],
+      image: UpdateActivation,
     },
     {
       icon: UpdateLocateIcon,
       setting: "ms-settings:findmydevice",
       text: "Find My Device",
       keywords: ["update", "device", "find"],
+      image: UpdateFindMydevice,
     },
     {
       icon: UpdateDevIcon,
       setting: "ms-settings:developers",
       text: "For developers",
       keywords: ["update", "dev", "developer"],
+      image: UpdateForDevelopers,
     },
     {
       icon: UpdateinsiderIcon,
       setting: "ms-settings:windowsinsider",
       text: "Windows Insider Program",
       keywords: ["update", "window", "insider"],
+      image: UpdateWindowsInsiderProgram,
     },
   ],
 });
@@ -874,9 +1126,14 @@ const Template = ({ page }: { page: PossibleSettings }) => {
   const [icons, setIcons] = React.useState<Setting[]>([]);
   const [title, setTitle] = React.useState("");
 
+  const [selected, setSelected] = React.useState<StaticImageData>(
+    undefined as any
+  );
+
   React.useEffect(() => {
     setIcons(settingsPanel[page]);
     setTitle(titleMap[page]);
+    setSelected(settingsPanel[page][0].image);
   }, [page]);
 
   const [myTimeout, setMyTimeout] = React.useState<NodeJS.Timeout>(null as any);
@@ -918,15 +1175,11 @@ const Template = ({ page }: { page: PossibleSettings }) => {
             icons={icons}
             title={title}
             copy={copySetting}
+            select={setSelected}
           />
         </header>
         <main className={styles.main}>
-          <SettingBuilder
-            title={title}
-            page={page}
-            setting={icons[0]?.setting}
-            copy={copySetting}
-          />
+          <SettingImage page={page} image={selected} />
         </main>
         <footer className={styles.footer}>
           <SettingMore />
