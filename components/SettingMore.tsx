@@ -79,7 +79,7 @@ const more: SettingMoreBuilder = [
     {
       type: BuilderType.Link,
       value: `Try it yourself`,
-      href: `http://localhost:3000/?redirect=ms-settings:`,
+      href: `https://ms-setting.com/?redirect=ms-settings:`,
     },
   ],
   [
