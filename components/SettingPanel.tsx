@@ -58,9 +58,10 @@ const PanelItem = ({ copy, setting, page, select }: PanelItemProps) => {
           className={homeStyles.header_clickable_img}
           src={CopyIcon}
           alt="Copy icon"
-          width={40}
-          height={40}
+          width={30}
+          height={30}
         />
+        <p>Copy</p>
       </div>
     </div>
   );

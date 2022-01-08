@@ -16,6 +16,11 @@
 .panel_copy {
   position: absolute;
   right: 8px;
+  height: 80%;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /* ========= Footer ========= */
