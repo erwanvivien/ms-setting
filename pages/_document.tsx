@@ -8,7 +8,7 @@ import Document, {
 } from "next/document";
 
 const MyDocument = (props: DocumentProps) => (
-  <Html>
+  <Html lang="en">
     <Head>
       <meta charSet="utf-8" />
 
