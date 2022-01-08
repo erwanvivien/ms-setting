@@ -421,3 +421,21 @@ input[type="checkbox"].checkbox_input:after {
 .main > * {
   /* max-width: 575px; */ /* Need for <SettingImage /> */
 }
+
+@media only screen and (max-width: 600px) {
+  .header_list_item_text {
+    width: 50%;
+  }
+
+  .header {
+    width: 240px;
+  }
+
+  .main {
+    padding-left: 230px;
+  }
+
+  .panel_copy {
+    right: 12px;
+  }
+}

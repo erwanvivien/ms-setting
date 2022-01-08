@@ -40,6 +40,7 @@ const PanelItem = ({ copy, setting, page, select }: PanelItemProps) => {
         width={40}
         height={40}
       />
+
       <p className={styles.header_list_item_text}>{setting.text}</p>
 
       <div
