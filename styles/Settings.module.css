@@ -53,6 +53,10 @@
 .footer_container {
 }
 
+.footer_container > * {
+  max-width: 320px;
+}
+
 @media only screen and (max-width: 1420px) {
   .footer {
     display: none;

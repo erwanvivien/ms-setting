@@ -1,6 +1,7 @@
 import React from "react";
 import type { NextPage } from "next";
 import styles from "../styles/Settings.module.css";
+import Link from "next/link";
 
 enum BuilderType {
   Title,
@@ -8,59 +9,101 @@ enum BuilderType {
   Link,
 }
 
+type BuilderTypeTitle = {
+  type: BuilderType.Title;
+  value: string;
+};
+
+type BuilderTypeDesc = {
+  type: BuilderType.Desc;
+  value: string;
+};
+
+type BuilderTypeLink = {
+  type: BuilderType.Link;
+  value: string;
+  href: string;
+};
+
+type SettingMoreBuilderItem =
+  | BuilderTypeTitle
+  | BuilderTypeDesc
+  | BuilderTypeLink;
+
+type SettingMoreBuilder = SettingMoreBuilderItem[][];
+
 const BuilderMap: {
   [k: string]: ({ value }: { value: string }) => JSX.Element;
 } = Object.fromEntries([
   [
     BuilderType.Title,
-    ({ value }: { value: string }) => (
+    ({ value }: BuilderTypeTitle) => (
       <p className={styles.footer_title}>{value}</p>
     ),
   ],
   [
     BuilderType.Desc,
-    ({ value }: { value: string }) => (
+    ({ value }: BuilderTypeDesc) => (
       <p className={styles.footer_description}>{value}</p>
     ),
   ],
   [
     BuilderType.Link,
-    ({ value }: { value: string }) => (
-      <p className={styles.footer_link}>{value}</p>
+    ({ value, href }: BuilderTypeLink) => (
+      <p className={styles.footer_link}>
+        <Link href={href}>
+          <a>{value}</a>
+        </Link>
+      </p>
     ),
   ],
 ]);
 
-type SettingMoreBuilder = {
-  type: BuilderType;
-  value: string;
-}[][];
-
 const more: SettingMoreBuilder = [
   [
-    { type: BuilderType.Title, value: `Turn on Bluetooth even faster` },
+    { type: BuilderType.Title, value: `MS Setting` },
     {
       type: BuilderType.Desc,
-      value: `To turn on Bluetooth without opening Settings, open action center, and
-      then select Bluetooth icon. Do the same to turn it off when you want.`,
+      value: `Ever wanted to provided accurate help ?`,
     },
-    { type: BuilderType.Link, value: `Get more info about Bluetooth` },
+    {
+      type: BuilderType.Desc,
+      value: `You can now provide a link to direct settings.
+      This accurate help help breaking the language barrier,
+      removes tons of pictures from tutorials (saving storage, energy and data)`,
+    },
+    {
+      type: BuilderType.Desc,
+      value: `It's very powerful`,
+    },
+    {
+      type: BuilderType.Link,
+      value: `Try it yourself`,
+      href: `http://localhost:3000/?redirect=ms-settings:`,
+    },
   ],
   [
-    { type: BuilderType.Title, value: "Related settings" },
-    { type: BuilderType.Link, value: "Devices and printers" },
-    { type: BuilderType.Link, value: "Sound settings" },
-    { type: BuilderType.Link, value: "Display settings" },
-    { type: BuilderType.Link, value: "More Bluetooth options" },
-    { type: BuilderType.Link, value: "Send or receive files via Bluetooth" },
+    { type: BuilderType.Title, value: `Github` },
+    {
+      type: BuilderType.Link,
+      value: `Want to help the project ?`,
+      href: "https://github.com/erwanvivien/ms-setting",
+    },
   ],
   [
-    { type: BuilderType.Title, value: "Have a question ?" },
-    { type: BuilderType.Link, value: "Share files over Bluetooth" },
-    { type: BuilderType.Link, value: "Reinstall Bluetooth drivers" },
-    { type: BuilderType.Link, value: "Fix Bluetooth connections" },
-    { type: BuilderType.Link, value: "Get help" },
+    { type: BuilderType.Title, value: `How does it work ?` },
+    {
+      type: BuilderType.Link,
+      value: `More info in project README`,
+      href: "https://github.com/erwanvivien/ms-setting#ms-settings",
+    },
+    {
+      type: BuilderType.Link,
+      value: `Microsoft doc (ms-settings:)`,
+      href: "https://docs.microsoft.com/en-us/windows/uwp/launch-resume/launch-settings-app",
+    },
   ],
+  [{ type: BuilderType.Title, value: `Thanks for using MS Setting` }],
 ];
 
 const SettingMore: NextPage = () => (
