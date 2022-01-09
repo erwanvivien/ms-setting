@@ -149,7 +149,7 @@ const CategoryItem = ({ category }: { category: CategoryProps }) => (
       <Image
         className={styles.category_image}
         src={category.icon}
-        alt={category.description}
+        alt={`${category.title} Icon`}
         width={40}
         height={40}
       />
