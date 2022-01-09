@@ -5,7 +5,6 @@ import styles from "../styles/Settings.module.css";
 import styleshome from "../styles/Home.module.css";
 
 import SettingMore from "../components/SettingMore";
-import SettingBuilder from "../components/SettingBuilder";
 import SettingPanel from "../components/SettingPanel";
 
 // Account
@@ -131,18 +130,21 @@ import UpdateWindowsIcon from "../public/icons/categories/updates_windows.svg";
 import SettingImage from "../components/SettingImage";
 
 // Image for setting content
+// Account
 import AccountsAccessWorkOrSchool from "../public/settings/accounts/accessworkorschool.png";
 import AccountsEmailAccounts from "../public/settings/accounts/emailaccounts.png";
 import AccountsFamilyOtherUsers from "../public/settings/accounts/familyotherusers.png";
 import AccountsSignInOptions from "../public/settings/accounts/signinoptions.png";
 import AccountsSyncYourSettings from "../public/settings/accounts/syncyoursettings.png";
 import AccountsYourInfo from "../public/settings/accounts/yourinfo.png";
+// App
 import AppsAppsFeatures from "../public/settings/apps/appsfeatures.png";
 import AppsAppsForWebsites from "../public/settings/apps/appsforwebsites.png";
 import AppsDefaultApps from "../public/settings/apps/defaultapps.png";
 import AppsOfflineMaps from "../public/settings/apps/offlinemaps.png";
 import AppsStartup from "../public/settings/apps/startup.png";
 import AppsVideoPlayback from "../public/settings/apps/videoplayback.png";
+// Periph
 import DevicesAutoplay from "../public/settings/devices/autoplay.png";
 import DevicesBluetoothOtherDevices from "../public/settings/devices/bluetoothotherdevices.png";
 import DevicesMouse from "../public/settings/devices/mouse.png";
@@ -150,6 +152,7 @@ import DevicesPenWindowsInk from "../public/settings/devices/penwindowsink.png";
 import DevicesPrintersScanners from "../public/settings/devices/printersscanners.png";
 import DevicesTyping from "../public/settings/devices/typing.png";
 import DevicesUsb from "../public/settings/devices/usb.png";
+// Access
 import EaseAudio from "../public/settings/ease/audio.png";
 import EaseClosedCaptions from "../public/settings/ease/closedcaptions.png";
 import EaseColorFilters from "../public/settings/ease/colorfilters.png";
@@ -163,10 +166,12 @@ import EaseMousePointer from "../public/settings/ease/mousepointer.png";
 import EaseNarrator from "../public/settings/ease/narrator.png";
 import EaseSpeech from "../public/settings/ease/speech.png";
 import EaseTextCursor from "../public/settings/ease/textcursor.png";
+// Games
 import GamingCaptures from "../public/settings/gaming/captures.png";
 import GamingGamemode from "../public/settings/gaming/gamemode.png";
 import GamingXboxGameBar from "../public/settings/gaming/xboxgamebar.png";
 import GamingXboxNetworking from "../public/settings/gaming/xboxnetworking.png";
+// Network
 import NetworkAirplaneMode from "../public/settings/network/airplanemode.png";
 import NetworkDialup from "../public/settings/network/dialup.png";
 import NetworkEthernet from "../public/settings/network/ethernet.png";
@@ -175,6 +180,7 @@ import NetworkProxy from "../public/settings/network/proxy.png";
 import NetworkStatus from "../public/settings/network/status.png";
 import NetworkVpn from "../public/settings/network/vpn.png";
 import NetworkWifi from "../public/settings/network/wifi.png";
+// Custom
 import PersonalizationBackground from "../public/settings/personalization/background.png";
 import PersonalizationColors from "../public/settings/personalization/colors.png";
 import PersonalizationFonts from "../public/settings/personalization/fonts.png";
@@ -182,6 +188,7 @@ import PersonalizationLockscreen from "../public/settings/personalization/locksc
 import PersonalizationStart from "../public/settings/personalization/start.png";
 import PersonalizationTaskbar from "../public/settings/personalization/taskbar.png";
 import PersonalizationThemes from "../public/settings/personalization/themes.png";
+// Privacy
 import PrivacyAccountInfo from "../public/settings/privacy/accountinfo.png";
 import PrivacyActivityHistory from "../public/settings/privacy/activityhistory.png";
 import PrivacyAppDiagnostics from "../public/settings/privacy/appdiagnostics.png";
@@ -209,8 +216,10 @@ import PrivacySpeech from "../public/settings/privacy/speech.png";
 import PrivacyTasks from "../public/settings/privacy/tasks.png";
 import PrivacyVideos from "../public/settings/privacy/videos.png";
 import PrivacyVoiceActivation from "../public/settings/privacy/voiceactivation.png";
+// Search
 import SearchPermissionsHistory from "../public/settings/search/permissionshistory.png";
 import SearchSearchingWindows from "../public/settings/search/searchingwindows.png";
+// System
 import SystemAbout from "../public/settings/system/about.png";
 import SystemClipboard from "../public/settings/system/clipboard.png";
 import SystemDisplay from "../public/settings/system/display.png";
@@ -224,10 +233,12 @@ import SystemSharedEexperiences from "../public/settings/system/sharedexperience
 import SystemSound from "../public/settings/system/sound.png";
 import SystemStorage from "../public/settings/system/storage.png";
 import SystemTablet from "../public/settings/system/tablet.png";
+// Time
 import TimeDatetime from "../public/settings/time/datetime.png";
 import TimeLanguage from "../public/settings/time/language.png";
 import TimeRegion from "../public/settings/time/region.png";
 import TimeSpeech from "../public/settings/time/speech.png";
+// Update
 import UpdateActivation from "../public/settings/update/activation.png";
 import UpdateBackup from "../public/settings/update/backup.png";
 import UpdateDeliveryOptimization from "../public/settings/update/deliveryoptimization.png";
@@ -509,7 +520,7 @@ export const settingsPanel = createSettings({
   phone: [
     {
       icon: undefined,
-      setting: "",
+      setting: "ms-settings:mobile-devices",
       text: "phone-temp",
       keywords: [],
       image: undefined as any,
@@ -1126,18 +1137,15 @@ const Template = ({ page }: { page: PossibleSettings }) => {
   const [icons, setIcons] = React.useState<Setting[]>([]);
   const [title, setTitle] = React.useState("");
 
-  const [selected, setSelected] = React.useState<StaticImageData>(
-    undefined as any
-  );
+  const [selected, setSelected] = React.useState<number>(0);
+
+  const [myTimeout, setMyTimeout] = React.useState<NodeJS.Timeout>(null as any);
+  const [content, setContent] = React.useState("");
 
   React.useEffect(() => {
     setIcons(settingsPanel[page]);
     setTitle(titleMap[page]);
-    setSelected(settingsPanel[page][0].image);
   }, [page]);
-
-  const [myTimeout, setMyTimeout] = React.useState<NodeJS.Timeout>(null as any);
-  const [content, setContent] = React.useState("");
 
   const copySetting = (text: string) => {
     if (!text.includes("ms-settings:")) {
@@ -1170,16 +1178,15 @@ const Template = ({ page }: { page: PossibleSettings }) => {
 
       <div className={styles.main_container}>
         <header className={styles.header}>
-          <SettingPanel
-            page={page}
-            icons={icons}
-            title={title}
-            copy={copySetting}
-            select={setSelected}
-          />
+          <SettingPanel icons={icons} title={title} select={setSelected} />
         </header>
         <main className={styles.main}>
-          <SettingImage page={page} image={selected} />
+          <SettingImage
+            page={page}
+            copy={copySetting}
+            image={settingsPanel[page][selected].image}
+            setting={settingsPanel[page][selected].setting}
+          />
         </main>
         <footer className={styles.footer}>
           <SettingMore />

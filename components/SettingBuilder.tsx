@@ -5,7 +5,7 @@ import Image from "next/image";
 import SettingMatch, { SettingBuilder, SettingTypes } from "./settings_types";
 
 import AppIcon from "../public/icons/categories/app_default.svg";
-import CopyIcon from "../public/copy.svg";
+import CopyIcon from "../public/copy2.svg";
 
 import styles from "../styles/Home.module.css";
 

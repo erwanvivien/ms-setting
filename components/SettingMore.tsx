@@ -86,12 +86,20 @@ const more: SettingMoreBuilder = [
     { type: BuilderType.Title, value: `Github` },
     {
       type: BuilderType.Link,
-      value: `Want to help the project ?`,
+      value: `Want to help the project ? Contribute`,
       href: "https://github.com/erwanvivien/ms-setting",
     },
   ],
   [
     { type: BuilderType.Title, value: `How does it work ?` },
+    {
+      type: BuilderType.Desc,
+      value: `Click on the copy icon and share it with someone or use it in your links`,
+    },
+    {
+      type: BuilderType.Desc,
+      value: `-`,
+    },
     {
       type: BuilderType.Link,
       value: `More info in project README`,

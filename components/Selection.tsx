@@ -24,7 +24,7 @@ import {
   settingsPanel,
   titleMap,
 } from "../pages/[settings]";
-import CopyIcon from "../public/copy.svg";
+import CopyIcon from "../public/copy2.svg";
 
 const categories = [
   {

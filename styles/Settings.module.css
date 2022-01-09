@@ -15,12 +15,15 @@
 
 .panel_copy {
   position: absolute;
-  right: 8px;
-  height: 80%;
+  top: 50px;
+  right: 374px;
 
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
+
+  gap: 8px;
 }
 
 /* ========= Footer ========= */
@@ -60,6 +63,10 @@
 @media only screen and (max-width: 1420px) {
   .footer {
     display: none;
+  }
+
+  .panel_copy {
+    right: 24px;
   }
 }
 
@@ -433,9 +440,5 @@ input[type="checkbox"].checkbox_input:after {
 
   .main {
     padding-left: 230px;
-  }
-
-  .panel_copy {
-    right: 12px;
   }
 }

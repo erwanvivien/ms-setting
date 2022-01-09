@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
-import CopyIcon from "../public/copy.svg";
+import CopyIcon from "../public/copy2.svg";
 
 type HeaderProps = {
   copy: (text: string) => void;
