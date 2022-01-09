@@ -36,7 +36,11 @@ Provide better help`}
       <link rel="apple-touch-icon" href="/icons/settings.svg" />
     </Head>
 
-    <body>
+    <body
+      style={{
+        overflow: "hidden",
+      }}
+    >
       <Main />
       <NextScript />
     </body>

@@ -45,17 +45,10 @@ const builder: SettingBuilder = [
 
 type SettingBuilderProps = {
   title: string;
-  setting: string;
-  page: string;
-  copy: (text: string) => void;
+  copyCurrent: () => void;
 };
 
-const SettingBuilder = ({
-  title,
-  copy,
-  setting,
-  page,
-}: SettingBuilderProps) => {
+const SettingBuilder = ({ title, copyCurrent }: SettingBuilderProps) => {
   return (
     <>
       <div className={styles.setting_builder_container}>
@@ -67,14 +60,7 @@ const SettingBuilder = ({
           alt="Copy icon"
           width={40}
           height={40}
-          onClick={() =>
-            copy(
-              `${window.location.protocol}//` +
-                `${window.location.host}/` +
-                `${page}?` +
-                `redirect=${setting}`
-            )
-          }
+          onClick={() => copyCurrent()}
         />
       </div>
 

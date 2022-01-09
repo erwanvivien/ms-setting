@@ -1142,6 +1142,12 @@ const Template = ({ page }: { page: PossibleSettings }) => {
   const [myTimeout, setMyTimeout] = React.useState<NodeJS.Timeout>(null as any);
   const [content, setContent] = React.useState("");
 
+  const [anchor, setAnchorPoint] = React.useState({ x: 0, y: 0 });
+  const [show, setShow] = React.useState(false);
+  const [contextMenu, setContextMenu] = React.useState(0);
+
+  const ref = React.useRef<HTMLDivElement>(null);
+
   React.useEffect(() => {
     setIcons(settingsPanel[page]);
     setTitle(titleMap[page]);
@@ -1165,32 +1171,112 @@ const Template = ({ page }: { page: PossibleSettings }) => {
     setMyTimeout(t);
   };
 
+  const copyCurrent = () =>
+    copySetting(
+      `${window.location.protocol}//` +
+        `${window.location.host}/` +
+        `${page}?` +
+        `redirect=${settingsPanel[page][selected].setting}`
+    );
+
+  React.useEffect(() => {
+    const current = ref.current;
+
+    const listener: (event: MouseEvent | TouchEvent) => any = (event) => {
+      // Do nothing if clicking ref's element or descendent elements
+      let isLeft = (event.which || (event as MouseEvent).button) === 1;
+      if (isLeft) {
+        setShow(false);
+        return;
+      }
+
+      const target = event.target as HTMLElement;
+
+      let text = "";
+      if (target.className === styles.header_list_item) {
+        text = target.querySelector("p")?.innerText || "";
+      } else if (target.className === styles.header_list_item_text) {
+        text = target.innerText;
+      } else if (target.className === styles.header_list_item_image) {
+        text = target.getAttribute("alt")?.replaceAll(" Icon", "") || "";
+      }
+
+      text = text || settingsPanel[page][selected].text;
+
+      const setting =
+        settingsPanel[page].findIndex((t) => t.text === text) || selected;
+
+      setContextMenu(setting);
+
+      setShow(false);
+    };
+
+    current?.addEventListener("mousedown", listener);
+    current?.addEventListener("touchstart", listener);
+
+    return () => {
+      current?.removeEventListener("mousedown", listener);
+      current?.removeEventListener("touchstart", listener);
+    };
+  }, [ref, show, page, selected]);
+
   return (
     <>
-      <Head>
-        <title>MS Settings {title} — Provide accurate help</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-
-      {content && (
-        <div className={styleshome.modal}>Copied url for {content}</div>
+      {show && (
+        <div
+          style={{
+            top: anchor.y,
+            left: anchor.x,
+          }}
+          className={styles.context_menu}
+          onClick={() => {
+            copySetting(
+              `${window.location.protocol}//` +
+                `${window.location.host}/` +
+                `${page}?` +
+                `redirect=${settingsPanel[page][contextMenu].setting}`
+            );
+            setShow(false);
+          }}
+        >
+          <p>Copy url for {settingsPanel[page][contextMenu].text}</p>
+        </div>
       )}
-
-      <div className={styles.main_container}>
-        <header className={styles.header}>
-          <SettingPanel icons={icons} title={title} select={setSelected} />
-        </header>
-        <main className={styles.main}>
-          <SettingImage
-            page={page}
-            copy={copySetting}
-            image={settingsPanel[page][selected].image}
-            setting={settingsPanel[page][selected].setting}
-          />
-        </main>
-        <footer className={styles.footer}>
-          <SettingMore />
-        </footer>
+      <div
+        ref={ref}
+        onContextMenu={(event) => {
+          event.preventDefault();
+          // console.log(`Right click`);
+          setAnchorPoint({ x: event.pageX, y: event.pageY });
+          setShow(true);
+        }}
+        style={{
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
+        <Head>
+          <title>MS Settings {title} — Provide accurate help</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
+        {content && (
+          <div className={styleshome.modal}>Copied url for {content}</div>
+        )}
+        <div className={styles.main_container}>
+          <header className={styles.header}>
+            <SettingPanel icons={icons} title={title} select={setSelected} />
+          </header>
+          <main className={styles.main}>
+            <SettingImage
+              page={page}
+              copyCurrent={copyCurrent}
+              image={settingsPanel[page][selected].image}
+            />
+          </main>
+          <footer className={styles.footer}>
+            <SettingMore />
+          </footer>
+        </div>
       </div>
     </>
   );

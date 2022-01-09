@@ -9,23 +9,12 @@ import CopyIcon from "../public/copy2.svg";
 type SettingImageProps = {
   page: string;
   image: StaticImageData;
-  copy: (text: string) => void;
-  setting: string;
+  copyCurrent: () => void;
 };
 
-const SettingImage = ({ page, image, setting, copy }: SettingImageProps) => (
+const SettingImage = ({ page, image, copyCurrent }: SettingImageProps) => (
   <>
-    <div
-      className={styles.panel_copy}
-      onClick={() =>
-        copy(
-          `${window.location.protocol}//` +
-            `${window.location.host}/` +
-            `${page}?` +
-            `redirect=${setting}`
-        )
-      }
-    >
+    <div className={styles.panel_copy} onClick={() => copyCurrent()}>
       <Image
         src={CopyIcon}
         className={homeStyles.header_clickable_img}
