@@ -1258,10 +1258,7 @@ const Template = ({ page }: { page: PossibleSettings }) => {
         <Head>
           <title>MS Settings {title} — Provide accurate help</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link
-            rel="canonical"
-            href={`${window.location.protocol}//ms-setting.com/${page}`}
-          />
+          <link rel="canonical" href={`https://ms-setting.com/${page}`} />
         </Head>
         {content && (
           <div className={styleshome.modal}>Copied url for {content}</div>
