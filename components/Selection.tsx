@@ -1,6 +1,5 @@
 import React from "react";
 
-import type { NextPage } from "next";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
@@ -17,6 +16,7 @@ import AccessibilityIcon from "../public/icons/ico_accessibility.svg";
 import SearchIcon from "../public/icons/ico_search.svg";
 import PrivacyIcon from "../public/icons/ico_privacy.svg";
 import UpdateIcon from "../public/icons/ico_update.svg";
+
 import Link from "next/link";
 import {
   PossibleSettings,
@@ -24,6 +24,7 @@ import {
   settingsPanel,
   titleMap,
 } from "../pages/[settings]";
+
 import CopyIcon from "../public/copy2.svg";
 
 const categories = [
