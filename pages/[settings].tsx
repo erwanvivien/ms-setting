@@ -1220,6 +1220,8 @@ const Template = ({ page }: { page: PossibleSettings }) => {
     };
   }, [ref, show, page, selected]);
 
+  const headTitle = `MS Settings ${title} — Provide accurate help`;
+
   return (
     <>
       {show && (
@@ -1256,7 +1258,7 @@ const Template = ({ page }: { page: PossibleSettings }) => {
         }}
       >
         <Head>
-          <title>MS Settings {title} — Provide accurate help</title>
+          <title>{headTitle}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="canonical" href={`https://ms-setting.com/${page}`} />
         </Head>
