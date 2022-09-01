@@ -7,264 +7,279 @@ import styleshome from "../styles/Home.module.css";
 import SettingMore from "../components/SettingMore";
 import SettingPanel from "../components/SettingPanel";
 
-// Account
-import AccountConnexionIcon from "../public/icons/categories/acc_connexions.svg";
-import AccountEmailIcon from "../public/icons/categories/acc_email.svg";
-import AccountFamilyIcon from "../public/icons/categories/acc_family.svg";
-import AccountInfoIcon from "../public/icons/categories/acc_info.svg";
-import AccountSchoolIcon from "../public/icons/categories/acc_school.svg";
-import AccountSyncIcon from "../public/icons/categories/acc_sync.svg";
-// Access
-import AccessAudioIcon from "../public/icons/categories/access_audio.svg";
-import AccessColorsIcon from "../public/icons/categories/access_colors.svg";
-import AccessComputerIcon from "../public/icons/categories/access_computer.svg";
-import AccessContrastIcon from "../public/icons/categories/access_contrast.svg";
-import AccessCursorIcon from "../public/icons/categories/access_cursor.svg";
-import AccessKeyboardIcon from "../public/icons/categories/access_keyboard.svg";
-import AccessMouseIcon from "../public/icons/categories/access_mouse.svg";
-import AccessNarratorIcon from "../public/icons/categories/access_narrator.svg";
-import AccessSearchIcon from "../public/icons/categories/access_search.svg";
-import AccessSubtitlesIcon from "../public/icons/categories/access_subtitles.svg";
-import AccessTextCursorIcon from "../public/icons/categories/access_text_cursor.svg";
-import AccessVisualControlsIcon from "../public/icons/categories/access_visual_control.svg";
-import AccessVoiceIcon from "../public/icons/categories/access_voice.svg";
-// App
-import AppDefaultIcon from "../public/icons/categories/app_default.svg";
-import AppFunctionnalitiesIcon from "../public/icons/categories/app_functionnalities.svg";
-import AppMapIcon from "../public/icons/categories/app_map.svg";
-import AppStartupIcon from "../public/icons/categories/app_startup.svg";
-import AppvideoPlayerIcon from "../public/icons/categories/app_video_player.svg";
-import AppWebIcon from "../public/icons/categories/app_web.svg";
-// Custom
-import CustomBackgroundIcon from "../public/icons/categories/cust_background.svg";
-import CustomColorsIcon from "../public/icons/categories/cust_colors.svg";
-import CustomFontIcon from "../public/icons/categories/cust_font.svg";
-import CustomLockscreenIcon from "../public/icons/categories/cust_lockscreen.svg";
-import CustomStartupIcon from "../public/icons/categories/cust_startup.svg";
-import CustomTaskbarIcon from "../public/icons/categories/cust_taskbar.svg";
-import CustomThemesIcon from "../public/icons/categories/cust_themes.svg";
-// Games
-import GamesBarIcon from "../public/icons/categories/games_bar.svg";
-import GamesCaptureIcon from "../public/icons/categories/games_capture.svg";
-import GamesModeIcon from "../public/icons/categories/games_mode.svg";
-import GamesXboxIcon from "../public/icons/categories/games_xbox.svg";
-// Time
-import TimeDateIcon from "../public/icons/categories/hour_date.svg";
-import TimeLanguageIcon from "../public/icons/categories/hour_lang.svg";
-import TimeRegionIcon from "../public/icons/categories/hour_region.svg";
-import TimeVoiceIcon from "../public/icons/categories/hour_voice.svg";
-// Network
-import NetworkAccessIcon from "../public/icons/categories/net_access.svg";
-import NetworkAccessPointIcon from "../public/icons/categories/net_access_point.svg";
-import NetworkAirplaneIcon from "../public/icons/categories/net_airplane.svg";
-import NetworkEthernetIcon from "../public/icons/categories/net_ethernet.svg";
-import NetworkProxyIcon from "../public/icons/categories/net_proxy.svg";
-import NetworkStateIcon from "../public/icons/categories/net_state.svg";
-import NetworkVpnIcon from "../public/icons/categories/net_vpn.svg";
-import NetworkWifiIcon from "../public/icons/categories/net_wifi.svg";
-// Periph
-import PeriphDevicesIcon from "../public/icons/categories/periph_devices.svg";
-import PeriphPrintersIcon from "../public/icons/categories/periph_printers.svg";
-import PeriphMouseIcon from "../public/icons/categories/periph_mouse.svg";
-import PeriphTypingIcon from "../public/icons/categories/periph_keyboard.svg";
-import PeriphPenIcon from "../public/icons/categories/periph_stylet.svg";
-import PeriphAutoPlayIcon from "../public/icons/categories/periph_automated.svg";
-import PeriphUsbIcon from "../public/icons/categories/periph_usb.svg";
-// Privacy
-import PrivacyAutoDownloadIcon from "../public/icons/categories/priv_automatic_download.svg";
-import PrivacyBackgroundAppIcon from "../public/icons/categories/priv_background_app.svg";
-import PrivacyCalendarIcon from "../public/icons/categories/priv_calendar.svg";
-import PrivacyCallIcon from "../public/icons/categories/priv_call.svg";
-import PrivacyCamIcon from "../public/icons/categories/priv_cam.svg";
-import PrivacyContactIcon from "../public/icons/categories/priv_contact.svg";
-import PrivacyDiagnoIcon from "../public/icons/categories/priv_diagno.svg";
-import PrivacyIcon from "../public/icons/categories/priv_diagno_app.svg";
-import PrivacyDocumentsIcon from "../public/icons/categories/priv_documents.svg";
-import PrivacyFilesystemIcon from "../public/icons/categories/priv_filesystem.svg";
-import PrivacyGeneralIcon from "../public/icons/categories/priv_general.svg";
-import PrivacyHistoIcon from "../public/icons/categories/priv_histo.svg";
-import PrivacyHisto_callIcon from "../public/icons/categories/priv_histo_call.svg";
-import PrivacyInfoIcon from "../public/icons/categories/priv_info.svg";
-import PrivacyLocationIcon from "../public/icons/categories/priv_location.svg";
-import PrivacyMailIcon from "../public/icons/categories/priv_mail.svg";
-import PrivacyManuscritIcon from "../public/icons/categories/priv_manuscrit.svg";
-import PrivacyMessageIcon from "../public/icons/categories/priv_message.svg";
-import PrivacyMicIcon from "../public/icons/categories/priv_mic.svg";
-import PrivacyNotifIcon from "../public/icons/categories/priv_notif.svg";
-import PrivacyOther_devicesIcon from "../public/icons/categories/priv_other_devices.svg";
-import PrivacyPicturesIcon from "../public/icons/categories/priv_pictures.svg";
-import PrivacyRadiosIcon from "../public/icons/categories/priv_radios.svg";
-import PrivacyTasksIcon from "../public/icons/categories/priv_tasks.svg";
-import PrivacyVideosIcon from "../public/icons/categories/priv_videos.svg";
-import PrivacyVoiceIcon from "../public/icons/categories/priv_voice.svg";
-import PrivacyVoice_activationIcon from "../public/icons/categories/priv_voice_activation.svg";
-// Search
-import SearchAuthIcon from "../public/icons/categories/search_auth.svg";
-import SearchSearchIcon from "../public/icons/categories/search_search.svg";
-// System
-import SystemAlimIcon from "../public/icons/categories/sys_alim.svg";
-import SystemAproposIcon from "../public/icons/categories/sys_apropos.svg";
-import SystemBatteryIcon from "../public/icons/categories/sys_battery.svg";
-import SystemConcentrationIcon from "../public/icons/categories/sys_concentration.svg";
-import SystemCopyIcon from "../public/icons/categories/sys_copy.svg";
-import SystemDisplayIcon from "../public/icons/categories/sys_display.svg";
-import SystemDistantIcon from "../public/icons/categories/sys_distant.svg";
-import SystemMultitaskIcon from "../public/icons/categories/sys_multitask.svg";
-import SystemNotifIcon from "../public/icons/categories/sys_notif.svg";
-import SystemProjectionIcon from "../public/icons/categories/sys_projection.svg";
-import SystemSharedIcon from "../public/icons/categories/sys_shared.svg";
-import SystemSoundIcon from "../public/icons/categories/sys_sound.svg";
-import SystemStorageIcon from "../public/icons/categories/sys_storage.svg";
-import SystemTabletIcon from "../public/icons/categories/sys_tablet.svg";
-// Update
-import UpdateActivateIcon from "../public/icons/categories/updates_activate.svg";
-import UpdateDevIcon from "../public/icons/categories/updates_dev.svg";
-import UpdateinsiderIcon from "../public/icons/categories/updates_insider.svg";
-import UpdateLocateIcon from "../public/icons/categories/updates_locate.svg";
-import UpdateOptiIcon from "../public/icons/categories/updates_opti.svg";
-import UpdateRecoverIcon from "../public/icons/categories/updates_recover.svg";
-import UpdateSaveIcon from "../public/icons/categories/updates_save.svg";
-import UpdateSecurityIcon from "../public/icons/categories/updates_security.svg";
-import UpdateSolveIcon from "../public/icons/categories/updates_solve.svg";
-import UpdateWindowsIcon from "../public/icons/categories/updates_windows.svg";
 import SettingImage from "../components/SettingImage";
+
+// Account
+const AccountConnexionIcon = "/icons/categories/acc_connexions.svg";
+const AccountEmailIcon = "/icons/categories/acc_email.svg";
+const AccountFamilyIcon = "/icons/categories/acc_family.svg";
+const AccountInfoIcon = "/icons/categories/acc_info.svg";
+const AccountSchoolIcon = "/icons/categories/acc_school.svg";
+const AccountSyncIcon = "/icons/categories/acc_sync.svg";
+// Access
+const AccessAudioIcon = "/icons/categories/access_audio.svg";
+const AccessColorsIcon = "/icons/categories/access_colors.svg";
+const AccessComputerIcon = "/icons/categories/access_computer.svg";
+const AccessContrastIcon = "/icons/categories/access_contrast.svg";
+const AccessCursorIcon = "/icons/categories/access_cursor.svg";
+const AccessKeyboardIcon = "/icons/categories/access_keyboard.svg";
+const AccessMouseIcon = "/icons/categories/access_mouse.svg";
+const AccessNarratorIcon = "/icons/categories/access_narrator.svg";
+const AccessSearchIcon = "/icons/categories/access_search.svg";
+const AccessSubtitlesIcon = "/icons/categories/access_subtitles.svg";
+const AccessTextCursorIcon = "/icons/categories/access_text_cursor.svg";
+const AccessVisualControlsIcon = "/icons/categories/access_visual_control.svg";
+const AccessVoiceIcon = "/icons/categories/access_voice.svg";
+// App
+const AppDefaultIcon = "/icons/categories/app_default.svg";
+const AppFunctionnalitiesIcon = "/icons/categories/app_functionnalities.svg";
+const AppMapIcon = "/icons/categories/app_map.svg";
+const AppStartupIcon = "/icons/categories/app_startup.svg";
+const AppvideoPlayerIcon = "/icons/categories/app_video_player.svg";
+const AppWebIcon = "/icons/categories/app_web.svg";
+// Custom
+const CustomBackgroundIcon = "/icons/categories/cust_background.svg";
+const CustomColorsIcon = "/icons/categories/cust_colors.svg";
+const CustomFontIcon = "/icons/categories/cust_font.svg";
+const CustomLockscreenIcon = "/icons/categories/cust_lockscreen.svg";
+const CustomStartupIcon = "/icons/categories/cust_startup.svg";
+const CustomTaskbarIcon = "/icons/categories/cust_taskbar.svg";
+const CustomThemesIcon = "/icons/categories/cust_themes.svg";
+// Games
+const GamesBarIcon = "/icons/categories/games_bar.svg";
+const GamesCaptureIcon = "/icons/categories/games_capture.svg";
+const GamesModeIcon = "/icons/categories/games_mode.svg";
+const GamesXboxIcon = "/icons/categories/games_xbox.svg";
+// Time
+const TimeDateIcon = "/icons/categories/hour_date.svg";
+const TimeLanguageIcon = "/icons/categories/hour_lang.svg";
+const TimeRegionIcon = "/icons/categories/hour_region.svg";
+const TimeVoiceIcon = "/icons/categories/hour_voice.svg";
+// Network
+const NetworkAccessIcon = "/icons/categories/net_access.svg";
+const NetworkAccessPointIcon = "/icons/categories/net_access_point.svg";
+const NetworkAirplaneIcon = "/icons/categories/net_airplane.svg";
+const NetworkEthernetIcon = "/icons/categories/net_ethernet.svg";
+const NetworkProxyIcon = "/icons/categories/net_proxy.svg";
+const NetworkStateIcon = "/icons/categories/net_state.svg";
+const NetworkVpnIcon = "/icons/categories/net_vpn.svg";
+const NetworkWifiIcon = "/icons/categories/net_wifi.svg";
+// Periph
+const PeriphDevicesIcon = "/icons/categories/periph_devices.svg";
+const PeriphPrintersIcon = "/icons/categories/periph_printers.svg";
+const PeriphMouseIcon = "/icons/categories/periph_mouse.svg";
+const PeriphTypingIcon = "/icons/categories/periph_keyboard.svg";
+const PeriphPenIcon = "/icons/categories/periph_stylet.svg";
+const PeriphAutoPlayIcon = "/icons/categories/periph_automated.svg";
+const PeriphUsbIcon = "/icons/categories/periph_usb.svg";
+// Privacy
+const PrivacyAutoDownloadIcon = "/icons/categories/priv_automatic_download.svg";
+const PrivacyBackgroundAppIcon = "/icons/categories/priv_background_app.svg";
+const PrivacyCalendarIcon = "/icons/categories/priv_calendar.svg";
+const PrivacyCallIcon = "/icons/categories/priv_call.svg";
+const PrivacyCamIcon = "/icons/categories/priv_cam.svg";
+const PrivacyContactIcon = "/icons/categories/priv_contact.svg";
+const PrivacyDiagnoIcon = "/icons/categories/priv_diagno.svg";
+const PrivacyIcon = "/icons/categories/priv_diagno_app.svg";
+const PrivacyDocumentsIcon = "/icons/categories/priv_documents.svg";
+const PrivacyFilesystemIcon = "/icons/categories/priv_filesystem.svg";
+const PrivacyGeneralIcon = "/icons/categories/priv_general.svg";
+const PrivacyHistoIcon = "/icons/categories/priv_histo.svg";
+const PrivacyHisto_callIcon = "/icons/categories/priv_histo_call.svg";
+const PrivacyInfoIcon = "/icons/categories/priv_info.svg";
+const PrivacyLocationIcon = "/icons/categories/priv_location.svg";
+const PrivacyMailIcon = "/icons/categories/priv_mail.svg";
+const PrivacyManuscritIcon = "/icons/categories/priv_manuscrit.svg";
+const PrivacyMessageIcon = "/icons/categories/priv_message.svg";
+const PrivacyMicIcon = "/icons/categories/priv_mic.svg";
+const PrivacyNotifIcon = "/icons/categories/priv_notif.svg";
+const PrivacyOther_devicesIcon = "/icons/categories/priv_other_devices.svg";
+const PrivacyPicturesIcon = "/icons/categories/priv_pictures.svg";
+const PrivacyRadiosIcon = "/icons/categories/priv_radios.svg";
+const PrivacyTasksIcon = "/icons/categories/priv_tasks.svg";
+const PrivacyVideosIcon = "/icons/categories/priv_videos.svg";
+const PrivacyVoiceIcon = "/icons/categories/priv_voice.svg";
+const PrivacyVoice_activationIcon =
+  "/icons/categories/priv_voice_activation.svg";
+// Search
+const SearchAuthIcon = "/icons/categories/search_auth.svg";
+const SearchSearchIcon = "/icons/categories/search_search.svg";
+// System
+const SystemAlimIcon = "/icons/categories/sys_alim.svg";
+const SystemAproposIcon = "/icons/categories/sys_apropos.svg";
+const SystemBatteryIcon = "/icons/categories/sys_battery.svg";
+const SystemConcentrationIcon = "/icons/categories/sys_concentration.svg";
+const SystemCopyIcon = "/icons/categories/sys_copy.svg";
+const SystemDisplayIcon = "/icons/categories/sys_display.svg";
+const SystemDistantIcon = "/icons/categories/sys_distant.svg";
+const SystemMultitaskIcon = "/icons/categories/sys_multitask.svg";
+const SystemNotifIcon = "/icons/categories/sys_notif.svg";
+const SystemProjectionIcon = "/icons/categories/sys_projection.svg";
+const SystemSharedIcon = "/icons/categories/sys_shared.svg";
+const SystemSoundIcon = "/icons/categories/sys_sound.svg";
+const SystemStorageIcon = "/icons/categories/sys_storage.svg";
+const SystemTabletIcon = "/icons/categories/sys_tablet.svg";
+// Update
+const UpdateActivateIcon = "/icons/categories/updates_activate.svg";
+const UpdateDevIcon = "/icons/categories/updates_dev.svg";
+const UpdateinsiderIcon = "/icons/categories/updates_insider.svg";
+const UpdateLocateIcon = "/icons/categories/updates_locate.svg";
+const UpdateOptiIcon = "/icons/categories/updates_opti.svg";
+const UpdateRecoverIcon = "/icons/categories/updates_recover.svg";
+const UpdateSaveIcon = "/icons/categories/updates_save.svg";
+const UpdateSecurityIcon = "/icons/categories/updates_security.svg";
+const UpdateSolveIcon = "/icons/categories/updates_solve.svg";
+const UpdateWindowsIcon = "/icons/categories/updates_windows.svg";
 
 // Image for setting content
 // Account
-import AccountsAccessWorkOrSchool from "../public/settings/accounts/accessworkorschool.png";
-import AccountsEmailAccounts from "../public/settings/accounts/emailaccounts.png";
-import AccountsFamilyOtherUsers from "../public/settings/accounts/familyotherusers.png";
-import AccountsSignInOptions from "../public/settings/accounts/signinoptions.png";
-import AccountsSyncYourSettings from "../public/settings/accounts/syncyoursettings.png";
-import AccountsYourInfo from "../public/settings/accounts/yourinfo.png";
+const AccountsAccessWorkOrSchool = "/settings/accounts/accessworkorschool.png";
+const AccountsEmailAccounts = "/settings/accounts/emailaccounts.png";
+const AccountsFamilyOtherUsers = "/settings/accounts/familyotherusers.png";
+const AccountsSignInOptions = "/settings/accounts/signinoptions.png";
+const AccountsSyncYourSettings = "/settings/accounts/syncyoursettings.png";
+const AccountsYourInfo = "/settings/accounts/yourinfo.png";
 // App
-import AppsAppsFeatures from "../public/settings/apps/appsfeatures.png";
-import AppsAppsForWebsites from "../public/settings/apps/appsforwebsites.png";
-import AppsDefaultApps from "../public/settings/apps/defaultapps.png";
-import AppsOfflineMaps from "../public/settings/apps/offlinemaps.png";
-import AppsStartup from "../public/settings/apps/startup.png";
-import AppsVideoPlayback from "../public/settings/apps/videoplayback.png";
+const AppsAppsFeatures = "/settings/apps/appsfeatures.png";
+const AppsAppsForWebsites = "/settings/apps/appsforwebsites.png";
+const AppsDefaultApps = "/settings/apps/defaultapps.png";
+const AppsOfflineMaps = "/settings/apps/offlinemaps.png";
+const AppsStartup = "/settings/apps/startup.png";
+const AppsVideoPlayback = "/settings/apps/videoplayback.png";
 // Periph
-import DevicesAutoplay from "../public/settings/devices/autoplay.png";
-import DevicesBluetoothOtherDevices from "../public/settings/devices/bluetoothotherdevices.png";
-import DevicesMouse from "../public/settings/devices/mouse.png";
-import DevicesPenWindowsInk from "../public/settings/devices/penwindowsink.png";
-import DevicesPrintersScanners from "../public/settings/devices/printersscanners.png";
-import DevicesTyping from "../public/settings/devices/typing.png";
-import DevicesUsb from "../public/settings/devices/usb.png";
+const DevicesAutoplay = "/settings/devices/autoplay.png";
+const DevicesBluetoothOtherDevices =
+  "/settings/devices/bluetoothotherdevices.png";
+const DevicesMouse = "/settings/devices/mouse.png";
+const DevicesPenWindowsInk = "/settings/devices/penwindowsink.png";
+const DevicesPrintersScanners = "/settings/devices/printersscanners.png";
+const DevicesTyping = "/settings/devices/typing.png";
+const DevicesUsb = "/settings/devices/usb.png";
 // Access
-import EaseAudio from "../public/settings/ease/audio.png";
-import EaseClosedCaptions from "../public/settings/ease/closedcaptions.png";
-import EaseColorFilters from "../public/settings/ease/colorfilters.png";
-import EaseDisplay from "../public/settings/ease/display.png";
-import EaseEyeControl from "../public/settings/ease/eyecontrol.png";
-import EaseHighContrast from "../public/settings/ease/highcontrast.png";
-import EaseKeyboard from "../public/settings/ease/keyboard.png";
-import EaseMagnifier from "../public/settings/ease/magnifier.png";
-import EaseMouse from "../public/settings/ease/mouse.png";
-import EaseMousePointer from "../public/settings/ease/mousepointer.png";
-import EaseNarrator from "../public/settings/ease/narrator.png";
-import EaseSpeech from "../public/settings/ease/speech.png";
-import EaseTextCursor from "../public/settings/ease/textcursor.png";
+const EaseAudio = "/settings/ease/audio.png";
+const EaseClosedCaptions = "/settings/ease/closedcaptions.png";
+const EaseColorFilters = "/settings/ease/colorfilters.png";
+const EaseDisplay = "/settings/ease/display.png";
+const EaseEyeControl = "/settings/ease/eyecontrol.png";
+const EaseHighContrast = "/settings/ease/highcontrast.png";
+const EaseKeyboard = "/settings/ease/keyboard.png";
+const EaseMagnifier = "/settings/ease/magnifier.png";
+const EaseMouse = "/settings/ease/mouse.png";
+const EaseMousePointer = "/settings/ease/mousepointer.png";
+const EaseNarrator = "/settings/ease/narrator.png";
+const EaseSpeech = "/settings/ease/speech.png";
+const EaseTextCursor = "/settings/ease/textcursor.png";
 // Games
-import GamingCaptures from "../public/settings/gaming/captures.png";
-import GamingGamemode from "../public/settings/gaming/gamemode.png";
-import GamingXboxGameBar from "../public/settings/gaming/xboxgamebar.png";
-import GamingXboxNetworking from "../public/settings/gaming/xboxnetworking.png";
+const GamingCaptures = "/settings/gaming/captures.png";
+const GamingGamemode = "/settings/gaming/gamemode.png";
+const GamingXboxGameBar = "/settings/gaming/xboxgamebar.png";
+const GamingXboxNetworking = "/settings/gaming/xboxnetworking.png";
 // Network
-import NetworkAirplaneMode from "../public/settings/network/airplanemode.png";
-import NetworkDialup from "../public/settings/network/dialup.png";
-import NetworkEthernet from "../public/settings/network/ethernet.png";
-import NetworkMobileHotspot from "../public/settings/network/mobilehotspot.png";
-import NetworkProxy from "../public/settings/network/proxy.png";
-import NetworkStatus from "../public/settings/network/status.png";
-import NetworkVpn from "../public/settings/network/vpn.png";
-import NetworkWifi from "../public/settings/network/wifi.png";
+const NetworkAirplaneMode = "/settings/network/airplanemode.png";
+const NetworkDialup = "/settings/network/dialup.png";
+const NetworkEthernet = "/settings/network/ethernet.png";
+const NetworkMobileHotspot = "/settings/network/mobilehotspot.png";
+const NetworkProxy = "/settings/network/proxy.png";
+const NetworkStatus = "/settings/network/status.png";
+const NetworkVpn = "/settings/network/vpn.png";
+const NetworkWifi = "/settings/network/wifi.png";
 // Custom
-import PersonalizationBackground from "../public/settings/personalization/background.png";
-import PersonalizationColors from "../public/settings/personalization/colors.png";
-import PersonalizationFonts from "../public/settings/personalization/fonts.png";
-import PersonalizationLockscreen from "../public/settings/personalization/lockscreen.png";
-import PersonalizationStart from "../public/settings/personalization/start.png";
-import PersonalizationTaskbar from "../public/settings/personalization/taskbar.png";
-import PersonalizationThemes from "../public/settings/personalization/themes.png";
+const PersonalizationBackground = "/settings/personalization/background.png";
+const PersonalizationColors = "/settings/personalization/colors.png";
+const PersonalizationFonts = "/settings/personalization/fonts.png";
+const PersonalizationLockscreen = "/settings/personalization/lockscreen.png";
+const PersonalizationStart = "/settings/personalization/start.png";
+const PersonalizationTaskbar = "/settings/personalization/taskbar.png";
+const PersonalizationThemes = "/settings/personalization/themes.png";
 // Privacy
-import PrivacyAccountInfo from "../public/settings/privacy/accountinfo.png";
-import PrivacyActivityHistory from "../public/settings/privacy/activityhistory.png";
-import PrivacyAppDiagnostics from "../public/settings/privacy/appdiagnostics.png";
-import PrivacyAutomaticFileDownloads from "../public/settings/privacy/automaticfiledownloads.png";
-import PrivacyBackgroundApps from "../public/settings/privacy/backgroundapps.png";
-import PrivacyCalendar from "../public/settings/privacy/calendar.png";
-import PrivacyCallHistory from "../public/settings/privacy/callhistory.png";
-import PrivacyCamera from "../public/settings/privacy/camera.png";
-import PrivacyContacts from "../public/settings/privacy/contacts.png";
-import PrivacyDiagnosticsFeedback from "../public/settings/privacy/diagnosticsfeedback.png";
-import PrivacyDocuments from "../public/settings/privacy/documents.png";
-import PrivacyEmail from "../public/settings/privacy/email.png";
-import PrivacyFilesystem from "../public/settings/privacy/filesystem.png";
-import PrivacyGeneral from "../public/settings/privacy/general.png";
-import PrivacyInkingTypingPersonalization from "../public/settings/privacy/inkingtypingpersonalization.png";
-import PrivacyLocation from "../public/settings/privacy/location.png";
-import PrivacyMessaging from "../public/settings/privacy/messaging.png";
-import PrivacyMicrophone from "../public/settings/privacy/microphone.png";
-import PrivacyNotifications from "../public/settings/privacy/notifications.png";
-import PrivacyOtherDevices from "../public/settings/privacy/otherdevices.png";
-import PrivacyPhoneCalls from "../public/settings/privacy/phonecalls.png";
-import PrivacyPictures from "../public/settings/privacy/pictures.png";
-import PrivacyRadios from "../public/settings/privacy/radios.png";
-import PrivacySpeech from "../public/settings/privacy/speech.png";
-import PrivacyTasks from "../public/settings/privacy/tasks.png";
-import PrivacyVideos from "../public/settings/privacy/videos.png";
-import PrivacyVoiceActivation from "../public/settings/privacy/voiceactivation.png";
+const PrivacyAccountInfo = "/settings/privacy/accountinfo.png";
+const PrivacyActivityHistory = "/settings/privacy/activityhistory.png";
+const PrivacyAppDiagnostics = "/settings/privacy/appdiagnostics.png";
+const PrivacyAutomaticFileDownloads =
+  "/settings/privacy/automaticfiledownloads.png";
+const PrivacyBackgroundApps = "/settings/privacy/backgroundapps.png";
+const PrivacyCalendar = "/settings/privacy/calendar.png";
+const PrivacyCallHistory = "/settings/privacy/callhistory.png";
+const PrivacyCamera = "/settings/privacy/camera.png";
+const PrivacyContacts = "/settings/privacy/contacts.png";
+const PrivacyDiagnosticsFeedback = "/settings/privacy/diagnosticsfeedback.png";
+const PrivacyDocuments = "/settings/privacy/documents.png";
+const PrivacyEmail = "/settings/privacy/email.png";
+const PrivacyFilesystem = "/settings/privacy/filesystem.png";
+const PrivacyGeneral = "/settings/privacy/general.png";
+const PrivacyInkingTypingPersonalization =
+  "/settings/privacy/inkingtypingpersonalization.png";
+const PrivacyLocation = "/settings/privacy/location.png";
+const PrivacyMessaging = "/settings/privacy/messaging.png";
+const PrivacyMicrophone = "/settings/privacy/microphone.png";
+const PrivacyNotifications = "/settings/privacy/notifications.png";
+const PrivacyOtherDevices = "/settings/privacy/otherdevices.png";
+const PrivacyPhoneCalls = "/settings/privacy/phonecalls.png";
+const PrivacyPictures = "/settings/privacy/pictures.png";
+const PrivacyRadios = "/settings/privacy/radios.png";
+const PrivacySpeech = "/settings/privacy/speech.png";
+const PrivacyTasks = "/settings/privacy/tasks.png";
+const PrivacyVideos = "/settings/privacy/videos.png";
+const PrivacyVoiceActivation = "/settings/privacy/voiceactivation.png";
 // Search
-import SearchPermissionsHistory from "../public/settings/search/permissionshistory.png";
-import SearchSearchingWindows from "../public/settings/search/searchingwindows.png";
+const SearchPermissionsHistory = "/settings/search/permissionshistory.png";
+const SearchSearchingWindows = "/settings/search/searchingwindows.png";
 // System
-import SystemAbout from "../public/settings/system/about.png";
-import SystemClipboard from "../public/settings/system/clipboard.png";
-import SystemDisplay from "../public/settings/system/display.png";
-import SystemFocusAssist from "../public/settings/system/focusassist.png";
-import SystemMultitasking from "../public/settings/system/multitasking.png";
-import SystemNotificationsActions from "../public/settings/system/notificationsactions.png";
-import SystemPowerSleep from "../public/settings/system/powersleep.png";
-import SystemProjectingToThisPc from "../public/settings/system/projectingtothispc.png";
-import SystemRemoteDesktop from "../public/settings/system/remotedesktop.png";
-import SystemSharedEexperiences from "../public/settings/system/sharedexperiences.png";
-import SystemSound from "../public/settings/system/sound.png";
-import SystemStorage from "../public/settings/system/storage.png";
-import SystemTablet from "../public/settings/system/tablet.png";
+const SystemAbout = "/settings/system/about.png";
+const SystemClipboard = "/settings/system/clipboard.png";
+const SystemDisplay = "/settings/system/display.png";
+const SystemFocusAssist = "/settings/system/focusassist.png";
+const SystemMultitasking = "/settings/system/multitasking.png";
+const SystemNotificationsActions = "/settings/system/notificationsactions.png";
+const SystemPowerSleep = "/settings/system/powersleep.png";
+const SystemProjectingToThisPc = "/settings/system/projectingtothispc.png";
+const SystemRemoteDesktop = "/settings/system/remotedesktop.png";
+const SystemSharedEexperiences = "/settings/system/sharedexperiences.png";
+const SystemSound = "/settings/system/sound.png";
+const SystemStorage = "/settings/system/storage.png";
+const SystemTablet = "/settings/system/tablet.png";
 // Time
-import TimeDatetime from "../public/settings/time/datetime.png";
-import TimeLanguage from "../public/settings/time/language.png";
-import TimeRegion from "../public/settings/time/region.png";
-import TimeSpeech from "../public/settings/time/speech.png";
+const TimeDatetime = "/settings/time/datetime.png";
+const TimeLanguage = "/settings/time/language.png";
+const TimeRegion = "/settings/time/region.png";
+const TimeSpeech = "/settings/time/speech.png";
 // Update
-import UpdateActivation from "../public/settings/update/activation.png";
-import UpdateBackup from "../public/settings/update/backup.png";
-import UpdateDeliveryOptimization from "../public/settings/update/deliveryoptimization.png";
-import UpdateFindMydevice from "../public/settings/update/findmydevice.png";
-import UpdateForDevelopers from "../public/settings/update/fordevelopers.png";
-import UpdateRecovery from "../public/settings/update/recovery.png";
-import UpdateTroubleshoot from "../public/settings/update/troubleshoot.png";
-import UpdateWindowsInsiderProgram from "../public/settings/update/windowsinsiderprogram.png";
-import UpdateWindowsSecurity from "../public/settings/update/windowssecurity.png";
-import UpdateWindowsUpdate from "../public/settings/update/windowsupdate.png";
+const UpdateActivation = "/settings/update/activation.png";
+const UpdateBackup = "/settings/update/backup.png";
+const UpdateDeliveryOptimization = "/settings/update/deliveryoptimization.png";
+const UpdateFindMydevice = "/settings/update/findmydevice.png";
+const UpdateForDevelopers = "/settings/update/fordevelopers.png";
+const UpdateRecovery = "/settings/update/recovery.png";
+const UpdateTroubleshoot = "/settings/update/troubleshoot.png";
+const UpdateWindowsInsiderProgram =
+  "/settings/update/windowsinsiderprogram.png";
+const UpdateWindowsSecurity = "/settings/update/windowssecurity.png";
+const UpdateWindowsUpdate = "/settings/update/windowsupdate.png";
 
 export interface Setting {
   icon: any;
   text: string;
   setting: string;
   keywords: string[];
-  image: StaticImageData;
+  image: string;
 }
 
-interface SettingMap {
-  [key: string]: Setting[];
-}
+export type PossibleSettings =
+  | "accounts"
+  | "ease"
+  | "apps"
+  | "personalization"
+  | "gaming"
+  | "time"
+  | "network"
+  | "devices"
+  | "phone"
+  | "privacy"
+  | "search"
+  | "system"
+  | "update";
 
-const createSettings = <M extends SettingMap>(o: M) => o;
-
-export const settingsPanel = createSettings({
+export const settingsPanel: { [K in PossibleSettings]: Setting[] } = {
   // Ok
   accounts: [
     {
@@ -1100,7 +1115,7 @@ export const settingsPanel = createSettings({
       image: UpdateWindowsInsiderProgram,
     },
   ],
-});
+};
 
 export const titleMap = {
   accounts: "Accounts",
@@ -1116,22 +1131,7 @@ export const titleMap = {
   system: "System",
   update: "Update & Security",
   phone: "Phone",
-};
-
-export type PossibleSettings =
-  | "accounts"
-  | "ease"
-  | "apps"
-  | "personalization"
-  | "gaming"
-  | "time"
-  | "network"
-  | "devices"
-  | "phone"
-  | "privacy"
-  | "search"
-  | "system"
-  | "update";
+} as const;
 
 const Template = ({ page }: { page: PossibleSettings }) => {
   const [icons, setIcons] = React.useState<Setting[]>([]);

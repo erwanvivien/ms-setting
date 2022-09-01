@@ -8,7 +8,7 @@ import CopyIcon from "../public/copy2.svg";
 
 type SettingImageProps = {
   page: string;
-  image: StaticImageData;
+  image: string;
   copyCurrent: () => void;
 };
 
@@ -30,7 +30,7 @@ const SettingImage = ({ page, image, copyCurrent }: SettingImageProps) => (
         <Image
           src={image}
           alt={`Setting page for ${page}`}
-          placeholder="blur"
+          placeholder="empty"
           width={1250}
           height={1010}
           quality={95}
